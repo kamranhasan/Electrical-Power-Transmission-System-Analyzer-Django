@@ -32,7 +32,7 @@
   </head>
 
 <body>
-
+{% block content %}
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center">
@@ -83,9 +83,9 @@
       <div class="row">
         <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
           <h1 data-aos="fade-up" style='color:#5faee3'>Grow your business with Al-Nafi</h1>
-          <h2 data-aos="fade-up" data-aos-delay="400">Make your organization secure with Al-Nafi Consulting</h2>
+          <h2 data-aos="fade-up" data-aos-delay="400">We possess a highly professional team with a vast domain network providing our clients single window operation facility Internationally.</h2>
           <div data-aos="fade-up" data-aos-delay="800">
-            <a href="#about" class="btn-get-started scrollto">Get Started</a>
+            <a href="#about" class="btn-get-started scrollto">Our Services</a>
           </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left" data-aos-delay="200">
@@ -144,18 +144,17 @@
         <div class="row content">
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="150">
             <p>
-              Content To be updated
-            </p>
+              We have a mission to safeguard critical data by providing security solutions and consulting services that are accessible to everyone.</p>
             <ul>
-              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
-              <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>
-              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
+              <li><i class="ri-check-double-line"></i>We have a cumulative experience of more than 50+ years for performing these services.</li>
+              <li><i class="ri-check-double-line"></i> We are results driven and aim to provide value for money. We agree the remit, we agree the budget, we agree the timescales and then we deliver with constant feedback throughout our commissions to ensure objectives are achieved.</li>
+
             </ul>
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-up" data-aos-delay="300">
             <p>
-              Content to be updated here</p>
-            <a href="#" class="btn-learn-more">Learn More</a>
+              We provide disruptive defenses, we understand that no matter how good your defenses are, they can be breached, so we focus our attention on protecting our clients' systems.</p>
+            <a href="#" class="btn-learn-more">Learn More About Us</a>
           </div>
         </div>
 
@@ -178,7 +177,7 @@
                   <div class="count-box">
                     <i class="icofont-simple-smile"></i>
                     <span data-toggle="counter-up">65</span>
-                    <p><strong>Happy Clients</strong> Content to be updated.</p>
+                    <p><strong>Satisfied Clients</strong> </p>
                   </div>
                 </div>
 
@@ -186,23 +185,23 @@
                   <div class="count-box">
                     <i class="icofont-document-folder"></i>
                     <span data-toggle="counter-up">85</span>
-                    <p><strong>Projects</strong> Conetnt to be updated.</p>
+                    <p><strong>Successful Projects</strong></p>
                   </div>
                 </div>
 
                 <div class="col-md-6 d-md-flex align-items-md-stretch">
                   <div class="count-box">
                     <i class="icofont-clock-time"></i>
-                    <span data-toggle="counter-up">12</span>
-                    <p><strong>Years of experience</strong> Conetnt to be updated.</p>
+                    <span data-toggle="counter-up">50</span>
+                    <p><strong>Years of experience</strong> </p>
                   </div>
                 </div>
 
                 <div class="col-md-6 d-md-flex align-items-md-stretch">
                   <div class="count-box">
-                    <i class="icofont-award"></i>
-                    <span data-toggle="counter-up">15</span>
-                    <p><strong>Awards</strong> Content to be updated.</p>
+                    <i class="icofont-connection"></i>
+                    <span data-toggle="counter-up">12</span>
+                    <p><strong>Services & Products</strong> </p>
                   </div>
                 </div>
               </div>
@@ -219,44 +218,23 @@
 
         <div class="section-title" data-aos="fade-up">
           <h2>Al-Nafi Services</h2>
-          <p>Content</p>
+          <p>We have a motive to make a difference in the World</p>
         </div>
 
         <div class="row">
+          {% for service in service %}
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
               <div class="icon"><i class="bx bxl-dribbble"></i></div>
-              <h4 class="title"><a href="">Service One</a></h4>
-              <p class="description">Content to be updated here.</p>
+              <h4 class="title"><a href="">{{ service.name }}</a></h4>
+              <p class="description">{{ service.description }}</p>
             </div>
           </div>
-
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
-              <div class="icon"><i class="bx bx-file"></i></div>
-              <h4 class="title"><a href="">Service Two</a></h4>
-              <p class="description">Content to be updated here.</p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
-              <div class="icon"><i class="bx bx-tachometer"></i></div>
-              <h4 class="title"><a href="">Service Three</a></h4>
-              <p class="description">Content to be updated here.</p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
-              <div class="icon"><i class="bx bx-world"></i></div>
-              <h4 class="title"><a href="">Service Four</a></h4>
-              <p class="description">Content to be updated here.</p>
-            </div>
-          </div>
+          {% endfor %}
+          
 
         </div>
-
+        
       </div>
     </section><!-- End Services Section -->
 
@@ -265,46 +243,20 @@
       <div class="container">
         <div class="section-title" data-aos="fade-up">
           <h2>Al- Nafi Products</h2>
-          <p>Content to be updated.</p>
+          <p>We provide wide range of products and solutions varying from Information Security to IT Infrastructure Development.</p>
         </div>
         <div class="row">
+          {% for product in product %}
           <div class="col-md-6 d-flex align-items-stretch">
-            <div class="card" style="background-image: url({% static 'assets/img/scada.jpg' %})" data-aos="fade-up" data-aos-delay="100">
+            <div class="card" style="background-image: url({{ product.picture.url }});background-size:contain" data-aos="fade-up" data-aos-delay="100">
               <div class="card-body">
-                <h5 class="card-title"><a href="">Product one</a></h5>
-                <p class="card-text">Content to be updated here..</p>
+                <h5 class="card-title"><a href="">{{ product.name }}</a></h5>
+                <p class="card-text">{{ product.description }}</p>
                 <div class="read-more"><a href="#"><i class="icofont-arrow-right"></i> Read More</a></div>
               </div>
             </div>
           </div>
-          <div class="col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
-            <div class="card" style="background-image: url({% static 'assets/img/op.jpg' %});" data-aos="fade-up" data-aos-delay="200">
-              <div class="card-body">
-                <h5 class="card-title"><a href="">Product Two</a></h5>
-                <p class="card-text">Content to be updated here..</p>
-                <div class="read-more"><a href="#"><i class="icofont-arrow-right"></i> Read More</a></div>
-              </div>
-            </div>
-
-          </div>
-          <div class="col-md-6 d-flex align-items-stretch mt-4">
-            <div class="card" style="background-image: url({% static 'assets/img/cd.jpg' %});" data-aos="fade-up" data-aos-delay="100">
-              <div class="card-body">
-                <h5 class="card-title"><a href="">Product Three</a></h5>
-                <p class="card-text">Content to be updated here..</p>
-                <div class="read-more"><a href="#"><i class="icofont-arrow-right"></i> Read More</a></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 d-flex align-items-stretch mt-4">
-            <div class="card" style="background-image: url({% static 'assets/img/product.jpg' %});" data-aos="fade-up" data-aos-delay="200">
-              <div class="card-body">
-                <h5 class="card-title"><a href="">Product Four</a></h5>
-                <p class="card-text">Content to be updated here..</p>
-                <div class="read-more"><a href="#"><i class="icofont-arrow-right"></i> Read More</a></div>
-              </div>
-            </div>
-          </div>
+          {% endfor %}
         </div>
 
       </div>
@@ -404,72 +356,24 @@
 
         <div class="section-title" data-aos="fade-up">
           <h2>Why Our Customers Keep Coming Back</h2>
-          <p>Content to be updated.</p>
+          
         </div>
 
         <div class="owl-carousel testimonials-carousel" data-aos="fade-up" data-aos-delay="200">
-
+          {% for testimonial in testimonial %}
           <div class="testimonial-wrap">
             <div class="testimonial-item">
-              <img src="{% static 'assets/img/testimonials/male.png' %}" class="testimonial-img" alt="">
-              <h3>Name of Person</h3>
-              <h4>Ceo &amp; Founder</h4>
+              <img src="{{ testimonial.picture.url }}" class="testimonial-img" alt="">
+              <h3>{{ testimonial.name }}</h3>
+              <h4>{{ testimonial.designation }}</h4>
               <p>
                 <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              Content to be updated  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                {{ testimonial.description }}<i class="bx bxs-quote-alt-right quote-icon-right"></i>
               </p>
             </div>
           </div>
-
-          <div class="testimonial-wrap">
-            <div class="testimonial-item">
-              <img src="{% static 'assets/img/testimonials/male.png' %}" class="testimonial-img" alt="">
-              <h3>Name of Person</h3>
-              <h4>Information Security Auditor</h4>
-              <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Content to be updated.<i class="bx bxs-quote-alt-right quote-icon-right"></i>
-              </p>
-            </div>
-          </div>
-
-          <div class="testimonial-wrap">
-            <div class="testimonial-item">
-              <img src="{% static 'assets/img/testimonials/male.png' %}" class="testimonial-img" alt="">
-              <h3>Name of Person</h3>
-              <h4>CISO</h4>
-              <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Content to be updated.
-                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-              </p>
-            </div>
-          </div>
-
-          <div class="testimonial-wrap">
-            <div class="testimonial-item">
-              <img src="{% static 'assets/img/testimonials/male.png' %}" class="testimonial-img" alt="">
-              <h3>Name of Person</h3>
-              <h4>Designation</h4>
-              <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Content to be updated<i class="bx bxs-quote-alt-right quote-icon-right"></i>
-              </p>
-            </div>
-          </div>
-
-          <div class="testimonial-wrap">
-            <div class="testimonial-item">
-              <img src="{% static 'assets/img/testimonials/male.png' %}" class="testimonial-img" alt="">
-              <h3>Name of Person</h3>
-              <h4>Entrepreneur</h4>
-              <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Content to be updated.<i class="bx bxs-quote-alt-right quote-icon-right"></i>
-              </p>
-            </div>
-          </div>
-
+          {% endfor %}
+          
         </div>
 
       </div>
@@ -635,83 +539,31 @@
 
         <div class="section-title" data-aos="fade-up">
           <h2>Leadership Team</h2>
-          <p>Content to be updated.</p>
+          <p>Our leadership team is made up of veterans from industries ranging from tech, Information Security, Payment Processing to Oil & Gas sector.</p>
         </div>
 
         <div class="row">
-
+          {% for team in team %}
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
             <div class="member" data-aos="fade-up" data-aos-delay="100">
               <div class="member-img">
-                <img src="{% static 'assets/img/team/male.png' %}" class="img-fluid" alt="">
+                <img src="{{ team.picture.url }}" class="img-fluid" alt="">
                 <div class="social">
-                  <a href=""><i class="icofont-twitter"></i></a>
-                  <a href=""><i class="icofont-facebook"></i></a>
-                  <a href=""><i class="icofont-instagram"></i></a>
                   <a href=""><i class="icofont-linkedin"></i></a>
                 </div>
               </div>
               <div class="member-info">
-                <h4>Muhammad Faisal</h4>
-                <span>Chief Technology Officer</span>
+                <h4>{{ team.name }}</h4>
+                <span>{{ team.designation }}</span>
               </div>
+              <p style='font-size:15px;font-style: italic;'>{{  team.short_description }}</p>
+              <div class="read-more"><a href="#"><i class="icofont-arrow-right"></i> Read More</a></div>
             </div>
           </div>
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-            <div class="member" data-aos="fade-up" data-aos-delay="200">
-              <div class="member-img">
-                <img src="{% static 'assets/img/team/male.png' %}" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="icofont-twitter"></i></a>
-                  <a href=""><i class="icofont-facebook"></i></a>
-                  <a href=""><i class="icofont-instagram"></i></a>
-                  <a href=""><i class="icofont-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Tariq Mahmood</h4>
-                <span>Chief Operating Officer</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-            <div class="member" data-aos="fade-up" data-aos-delay="300">
-              <div class="member-img">
-                <img src="{% static 'assets/img/team/male.png' %}" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="icofont-twitter"></i></a>
-                  <a href=""><i class="icofont-facebook"></i></a>
-                  <a href=""><i class="icofont-instagram"></i></a>
-                  <a href=""><i class="icofont-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Ishraque Ansari</h4>
-                <span>CFO</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-            <div class="member" data-aos="fade-up" data-aos-delay="400">
-              <div class="member-img">
-                <img src="{% static 'assets/img/team/male.png' %}" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="icofont-twitter"></i></a>
-                  <a href=""><i class="icofont-facebook"></i></a>
-                  <a href=""><i class="icofont-instagram"></i></a>
-                  <a href=""><i class="icofont-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>To be updated</h4>
-                <span>To be Updated</span>
-              </div>
-            </div>
-          </div>
-
+          {% endfor %}
+          <div style="margin: 10px auto 10px auto;border: 2px #5faee3 solid;border-radius:10px;padding:10px;"  data-aos="fade-up" data-aos-delay="800">
+            <a href="#about" class="btn-get-started scrollto">View Our Team</a>
+          </div>          
         </div>
 
       </div>
@@ -870,7 +722,7 @@
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="contact-about">
               <h3>Al-Nafi Consulting</h3>
-              <p>Content to be updated.</p>
+              <p>Secure your organization with ANC!</p>
               <div class="social-links">
                 <a href="#" class="twitter"><i class="icofont-twitter"></i></a>
                 <a href="#" class="facebook"><i class="icofont-facebook"></i></a>
@@ -884,7 +736,9 @@
             <div class="info">
               <div>
                 <i class="ri-map-pin-line"></i>
-                <p>A108 Adam Street<br>New York, NY 535022</p>
+                <p> Canada: 64 Fullerton Crecent, L35 3G5 Markham, ON, Canada.<br/>
+                  Pakistan: A-163, Block 13-C, Gulshan-e-Iqbal, Karachi.
+              </p>
               </div>
 
               <div>
@@ -894,36 +748,22 @@
 
               <div>
                 <i class="ri-phone-line"></i>
-                <p>+91111111111</p>
+                <p>+92333-0596203</p>
               </div>
 
             </div>
           </div>
 
           <div class="col-lg-5 col-md-12" data-aos="fade-up" data-aos-delay="300">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-              <div class="form-group">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                <div class="validate"></div>
-              </div>
-              <div class="form-group">
-                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
-                <div class="validate"></div>
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                <div class="validate"></div>
-              </div>
-              <div class="form-group">
-                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
-                <div class="validate"></div>
-              </div>
-              <div class="mb-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
+            <form action="{% url 'contacted' %}#contacted" method="POST" >
+              {% csrf_token %}
+              {% block contactform %}
+              {% load crispy_forms_tags %}
+          {{ contact|crispy}}
+              <!-- <div class="text-center"><button type="submit">{{ respond }}</button></div> -->
+              <button id='contacted' type="submit" style='margin:3px auto 3px auto;border: 2px #5faee3 solid;border-radius:10px;padding:10px;background-color: white;'>{{ respond }}</button>
+
+              {% endblock contactform %}
             </form>
           </div>
 
@@ -947,8 +787,8 @@
           <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
             <a href="#intro" class="scrollto">Home</a>
             <a href="#about" class="scrollto">About</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Use</a>
+            <!-- <a href="#">Privacy Policy</a> -->
+            <!-- <a href="#">Terms of Use</a> -->
           </nav>
         </div>
       </div>
@@ -971,7 +811,7 @@
 
   <!-- Template Main JS File -->
   <script src="{% static 'assets/js/main.js' %}"></script>
-
+{% endblock content %}
 </body>
 
 </html>
