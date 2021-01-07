@@ -3,8 +3,8 @@ from .models import *
 from .forms import Messages
 # Create your views here.
 def index(request):
-    service = Service.objects.all()
-    product = Product.objects.all()
+    service = Service.objects.all()[:8]
+    product = Product.objects.all()[:4]
     testimonial = Testimonial.objects.all()
     team = Team.objects.all()[:4]
     contact = Messages()
@@ -42,3 +42,103 @@ def contacted(request):
         'respond' : respond
         }
     return render(request, 'index.html', context)
+
+
+def productDetail(request,id):
+    product=Product.objects.get(id=id)
+    contact = Messages()
+    respond = 'Send Message'
+    return render(request, 'productdetail.html',{'product': product,
+                                                'contact' : contact,
+                                                'respond' : respond
+                                                }
+                )
+
+
+def serviceDetail(request,id):
+    service=Service.objects.get(id=id)
+    contact = Messages()
+    respond = 'Send Message'
+    return render(request, 'servicedetail.html',{'service': service,
+                                                'contact' : contact,
+                                                'respond' : respond
+                                                }
+                )
+
+
+def services(request):
+    service=Service.objects.all()
+    contact = Messages()
+    respond = 'Send Message'
+    return render(request, 'services.html',{'service': service,
+                                                'contact' : contact,
+                                                'respond' : respond
+                                            }
+                )
+
+
+def products(request):
+    product=Product.objects.all()
+    contact = Messages()
+    respond = 'Send Message'
+    return render(request, 'products.html',{'product': product,
+                                                'contact' : contact,
+                                                'respond' : respond
+                                            }
+                )
+
+def team(request):
+    team=Team.objects.all()
+    contact = Messages()
+    respond = 'Send Message'
+    return render(request, 'team.html',{'team': team,
+                                                'contact' : contact,
+                                                'respond' : respond
+                                        }
+                )
+
+def packagedetail(request,id):
+    package=Packages.objects.get(id=id)
+    contact = Messages()
+    respond = 'Send Message'
+    return render(request, 'packagedetail.html',{'package': package,
+                                                'contact' : contact,
+                                                'respond' : respond
+                                                }
+                )
+
+
+def nafilinux(request):
+    Information_gathering=Packages.objects.filter(domain_name='Information Gathering')
+    Vulnerability_Analysis=Packages.objects.filter(domain_name='Vulnerability Analysis')
+    Wireless_Attacks=Packages.objects.filter(domain_name='Wireless Attacks')
+    Web_Applications=Packages.objects.filter(domain_name='Web Applications')
+    Exploitation_Tools=Packages.objects.filter(domain_name='Exploitation Tools')
+    Stress_Testing=Packages.objects.filter(domain_name='Stress Testing')
+    Forensics_Tools=Packages.objects.filter(domain_name='Forensics Tools')
+    Sniffing_Spoofing=Packages.objects.filter(domain_name='Sniffing & Spoofing')
+    Password_Attacks=Packages.objects.filter(domain_name='Password Attacks')
+    Maintaining_Access=Packages.objects.filter(domain_name='Maintaining Access')
+    Reverse_Engineering=Packages.objects.filter(domain_name='Reverse Engineering')
+    Reporting_Tools=Packages.objects.filter(domain_name='Reporting Tools')
+    Hardware_Hacking=Packages.objects.filter(domain_name='Hardware Hacking')
+
+    contact = Messages()
+    respond = 'Send Message'
+    context = {'Information_gathering' : Information_gathering,
+                'Vulnerability_Analysis' : Vulnerability_Analysis,
+                'Wireless_Attacks' : Wireless_Attacks,
+                'Web_Applications' : Web_Applications,
+                'Exploitation_Tools' : Exploitation_Tools,
+                'Stress_Testing' : Stress_Testing,
+                'Forensics_Tools' : Forensics_Tools,
+                'Sniffing_Spoofing' : Sniffing_Spoofing,
+                'Password_Attacks' : Password_Attacks,
+                'Maintaining_Access' : Maintaining_Access,
+                'Reverse_Engineering' : Reverse_Engineering,
+                'Reporting_Tools' : Reporting_Tools,
+                'Hardware_Hacking' : Hardware_Hacking,
+                'contact' : contact,
+                'respond' : respond,
+                }
+    return render(request, 'nafilinux.html',context )

@@ -7,14 +7,16 @@ from django.db import models
 class Service(models.Model):
     name=models.CharField(max_length=300,default='')
     picture=models.ImageField(default='default.jpg')
-    description=models.CharField(max_length=1000,default='')
+    short_description=models.CharField(max_length=600,default='')
+    complete_description=models.CharField(max_length=2000,default='')    
     def __str__(self):
         return self.name
 
 class Product(models.Model):
     name=models.CharField(max_length=300,default='')
     picture=models.ImageField(default='default.jpg')
-    description=models.CharField(max_length=1000,default='')
+    short_description=models.CharField(max_length=600,default='')
+    complete_description=models.CharField(max_length=2000,default='')
     def __str__(self):
         return self.name
 
@@ -46,3 +48,15 @@ class Contact(models.Model):
     How_Can_We_Help_You=models.CharField(max_length=400)
     def __str__(self):
         return self.First_Name
+
+class Packages(models.Model):
+    domain_name=models.CharField(max_length=300,default='')
+    tool_name=models.CharField(max_length=300,default='')
+    package_description=models.CharField(max_length=2000,default='')
+    source=models.CharField(max_length=200,default='')    
+    author=models.CharField(max_length=200,default='')    
+    license=models.CharField(max_length=200,default='')    
+    code=models.CharField(max_length=4000,default='')    
+    usage_code=models.CharField(max_length=200,default='')    
+    def __str__(self):
+        return self.tool_name

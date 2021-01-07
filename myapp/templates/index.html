@@ -45,15 +45,15 @@
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li class="active"><a href="{% static 'index' %}">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Products</a></li>
-          <li><a href="#team">Team</a></li>
-          <li class="drop-down"><a href="">Drop Down</a>
+          <li class="active"><a href="{% url 'index' %}">Home</a></li>
+          <li><a href="{% url 'index' %}#about">About</a></li>
+          <li><a href="{% url 'services' %}">Services</a></li>
+          <li><a href="{% url 'products' %}">Products</a></li>
+          <li><a href="{% url 'team' %}">Team</a></li>
+          <li class="drop-down"><a href="">Nafi Linux Tools</a>
             <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="drop-down"><a href="#">Drop Down 2</a>
+              <li><a href="{% url 'nafilinux' %}">Information Gathering</a></li>
+              <!-- <li class="drop-down"><a href="#"></a>
                 <ul>
                   <li><a href="#">Deep Drop Down 1</a></li>
                   <li><a href="#">Deep Drop Down 2</a></li>
@@ -61,10 +61,21 @@
                   <li><a href="#">Deep Drop Down 4</a></li>
                   <li><a href="#">Deep Drop Down 5</a></li>
                 </ul>
-              </li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-              <li><a href="#">Drop Down 5</a></li>
+              </li> -->
+              <li><a href="{% url 'nafilinux' %}">Vulnerability Analysis</a></li>
+              <li><a href="{% url 'nafilinux' %}">Wireless Attacks</a></li>
+              <li><a href="{% url 'nafilinux' %}">Exploitation Tools</a></li>
+              <li><a href="{% url 'nafilinux' %}">Stress Testing</a></li>
+              <li><a href="{% url 'nafilinux' %}">Forensics Tools</a></li>
+              <li><a href="{% url 'nafilinux' %}">Sniffing & Spoofing</a></li>
+              <li><a href="{% url 'nafilinux' %}">Password Attacks</a></li>
+              <li><a href="{% url 'nafilinux' %}">Maintaining Access</a></li>
+              <li><a href="{% url 'nafilinux' %}">Reverse Engineering</a></li>
+              <li><a href="{% url 'nafilinux' %}">Reporting Tools</a></li>
+              <li><a href="{% url 'nafilinux' %}">Hardware Hacking</a></li>
+
+
+
             </ul>
           </li>
           <li><a href="#contact">Contact</a></li>
@@ -227,11 +238,13 @@
             <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
               <div class="icon"><i class="bx bxl-dribbble"></i></div>
               <h4 class="title"><a href="">{{ service.name }}</a></h4>
-              <p class="description">{{ service.description }}</p>
+              <p class="description">{{ service.short_description }}</p>
             </div>
           </div>
           {% endfor %}
-          
+          <div style="margin: 10px auto 10px auto;border: 2px #5faee3 solid;border-radius:10px;padding:10px;" data-aos="fade-up" data-aos-delay="800">
+            <a href="#about" class="btn-get-started scrollto">All Services</a>
+          </div>          
 
         </div>
         
@@ -251,14 +264,18 @@
             <div class="card" style="background-image: url({{ product.picture.url }});background-size:contain" data-aos="fade-up" data-aos-delay="100">
               <div class="card-body">
                 <h5 class="card-title"><a href="">{{ product.name }}</a></h5>
-                <p class="card-text">{{ product.description }}</p>
+                <p class="card-text">{{ product.short_description }}</p>
                 <div class="read-more"><a href="#"><i class="icofont-arrow-right"></i> Read More</a></div>
               </div>
             </div>
           </div>
           {% endfor %}
+         
+          <div style="margin: 10px auto 10px auto;border: 2px #5faee3 solid;border-radius:10px;padding:10px;"  data-aos="fade-up" data-aos-delay="800">
+           <a href="#about" class="btn-get-started scrollto">All Products</a>
+          </div>
         </div>
-
+        
       </div>
     </section><!-- End More Services Section -->
 
@@ -351,7 +368,7 @@
     <!-- End Features Section -->
 
     <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials section-bg">
+    <!-- <section id="testimonials" class="testimonials section-bg">
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
@@ -377,7 +394,8 @@
         </div>
 
       </div>
-    </section><!-- End Testimonials Section -->
+    </section> -->
+    <!-- End Testimonials Section -->
 
     <!-- ======= Portfolio Section ======= -->
     <!-- <section id="portfolio" class="portfolio">
@@ -736,7 +754,7 @@
             <div class="info">
               <div>
                 <i class="ri-map-pin-line"></i>
-                <p> Canada: 64 Fullerton Crecent, L35 3G5 Markham, ON, Canada.<br/>
+                <p> Canada: 64 Fullerton Crecent, L3R 3G5 Markham, ON, Canada.<br/>
                   Pakistan: A-163, Block 13-C, Gulshan-e-Iqbal, Karachi.
               </p>
               </div>
@@ -797,7 +815,6 @@
 
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
-  <!-- Vendor JS Files -->
   <script src="{% static 'assets/vendor/jquery/jquery.min.js' %}"></script>
   <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
   <script src="{% static 'assets/vendor/jquery.easing/jquery.easing.min.js' %}"></script>
@@ -809,7 +826,6 @@
   <script src="{% static 'assets/vendor/venobox/venobox.min.js' %}"></script>
   <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
 
-  <!-- Template Main JS File -->
   <script src="{% static 'assets/js/main.js' %}"></script>
 {% endblock content %}
 </body>
