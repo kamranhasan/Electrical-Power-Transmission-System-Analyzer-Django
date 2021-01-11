@@ -77,12 +77,51 @@ WSGI_APPLICATION = 'website.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'HOST': '/cloudsql/nafi-consulting:us-central1:consulting',
+            'USER': 'consulting',
+            'PASSWORD': 'consult_0445',
+            'NAME': 'nafi',
+        }
     }
-}
+
+# if os.getenv('GAE_APPLICATION', None):
+#     # Running on production App Engine, so connect to Google Cloud SQL using
+#     # the unix socket at /cloudsql/<your-cloudsql-connection string>
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#             'HOST': '/cloudsql/nafi-consulting:us-central1:consulting',
+#             'USER': 'consulting',
+#             'PASSWORD': 'consult_0445',
+#             'NAME': 'nafi',
+#             'PORT': '3306'
+#         }
+#     }
+# else:
+#     # Running locally so connect to either a local MySQL instance or connect to
+#     # Cloud SQL via the proxy. To start the proxy via command line:
+#     #
+#     #     $ cloud_sql_proxy -instances=[INSTANCE_CONNECTION_NAME]=tcp:3306
+#     #
+#     # See https://cloud.google.com/sql/docs/mysql-connect-proxy
+#     DATABASES = { 
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+
+
+
 
 
 # Password validation
@@ -126,7 +165,25 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 #     os.path.join(BASE_DIR, 'static'),
 # ]
 
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, "static/")
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+# STATIC_URL = '/static/'
+# STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT = 'media'
+
+
+    
+# DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
+GS_BUCKET_NAME = 'nafi-consulting.appspot.com'
+# STATICFILES_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
+
+# GS_PROJECT_ID = 'nafi-consulting'
+# GS_STATIC_BUCKET_NAME = 'nafi-consulting.appspot.com'
+# GS_MEDIA_BUCKET_NAME = 'nafi-consulting.appspot.com'  # same as STATIC BUCKET if using single bucket both for static and media
+
+STATIC_URL = 'https://storage.googleapis.com/nafi-consulting.appspot.com/static/'
+STATIC_ROOT = "static/"
+
+
+
+MEDIA_URL = 'https://storage.googleapis.com/nafi-consulting.appspot.com/media/'
+MEDIA_ROOT = "media/"
