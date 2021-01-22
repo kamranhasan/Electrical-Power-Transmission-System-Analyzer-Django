@@ -21,6 +21,7 @@
   <!-- Vendor CSS Files -->
   <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
   <link href="{% static 'assets/vendor/icofont/icofont.min.css' %}" rel="stylesheet">
+  <!-- <link href="https://storage.googleapis.com/nafi-consulting.appspot.com/static/assets/vendor/icofont/icofont.min.css" rel="stylesheet"> -->
   <link href="{% static 'assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
   <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
   <link href="{% static 'assets/vendor/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
@@ -30,6 +31,9 @@
   <!-- Template Main CSS File -->
   <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
 
+
+  <!-- <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet"> -->
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
   </head>
 
 <body>
@@ -158,8 +162,8 @@
             <p>
               We have a mission to safeguard critical data by providing security solutions and consulting services that are accessible to everyone.</p>
             <ul>
-              <li><i class="ri-check-double-line"></i>We have a cumulative experience of more than 50+ years for performing these services.</li>
-              <li><i class="ri-check-double-line"></i> We are results driven and aim to provide value for money. We agree the remit, we agree the budget, we agree the timescales and then we deliver with constant feedback throughout our commissions to ensure objectives are achieved.</li>
+              <li><i class="icon-check"></i>We have a cumulative experience of more than 50+ years for performing these services.</li>
+              <li><i class="icon-check"></i> We are results driven and aim to provide value for money. We agree the remit, we agree the budget, we agree the timescales and then we deliver with constant feedback throughout our commissions to ensure objectives are achieved.</li>
 
             </ul>
           </div>
@@ -187,7 +191,8 @@
               <div class="row">
                 <div class="col-md-6 d-md-flex align-items-md-stretch">
                   <div class="count-box">
-                    <i class="icofont-simple-smile"></i>
+                    <!-- <i class="icofont-simple-smile"></i> -->
+                    <i class="icon-check-sign"></i> 
                     <span data-toggle="counter-up">65</span>
                     <p><strong>Satisfied Clients</strong> </p>
                   </div>
@@ -195,7 +200,8 @@
 
                 <div class="col-md-6 d-md-flex align-items-md-stretch">
                   <div class="count-box">
-                    <i class="icofont-document-folder"></i>
+                    <!-- <i class="icofont-document-folder"></i> -->
+                    <i class="icon-check-sign"></i> 
                     <span data-toggle="counter-up">85</span>
                     <p><strong>Successful Projects</strong></p>
                   </div>
@@ -203,7 +209,8 @@
 
                 <div class="col-md-6 d-md-flex align-items-md-stretch">
                   <div class="count-box">
-                    <i class="icofont-clock-time"></i>
+                    <!-- <i class="icofont-clock-time"></i> -->
+                    <i class="icon-check-sign"></i> 
                     <span data-toggle="counter-up">50</span>
                     <p><strong>Years of experience</strong> </p>
                   </div>
@@ -211,7 +218,8 @@
 
                 <div class="col-md-6 d-md-flex align-items-md-stretch">
                   <div class="count-box">
-                    <i class="icofont-connection"></i>
+                    <i class="icon-check-sign"></i> 
+                    <!-- <i class="icofont-connection"></i> -->
                     <span data-toggle="counter-up">12</span>
                     <p><strong>Services & Products</strong> </p>
                   </div>
@@ -237,14 +245,14 @@
           {% for service in service %}
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-              <div class="icon"><i class="bx bxl-dribbble"></i></div>
-              <h4 class="title"><a href="">{{ service.name }}</a></h4>
+              <div class="icon"><i class="icon-dribbble"></i></div>
+              <h4 class="title"><a href="{% url 'serviceDetail' service.id %}">{{ service.name }}</a></h4>
               <p class="description">{{ service.short_description }}</p>
             </div>
           </div>
           {% endfor %}
           <div style="margin: 10px auto 10px auto;border: 2px #5faee3 solid;border-radius:10px;padding:10px;" data-aos="fade-up" data-aos-delay="800">
-            <a href="#about" class="btn-get-started scrollto">All Services</a>
+            <a href="{% url 'services' %}" class="btn-get-started scrollto">All Services</a>
           </div>          
 
         </div>
@@ -264,16 +272,16 @@
           <div class="col-md-6 d-flex align-items-stretch">
             <div class="card" style="background-image: url({{ product.picture.url }});background-size:contain" data-aos="fade-up" data-aos-delay="100">
               <div class="card-body">
-                <h5 class="card-title"><a href="">{{ product.name }}</a></h5>
+                <h5 class="card-title"><a href="{% url 'productDetail' product.id %}">{{ product.name }}</a></h5>
                 <p class="card-text">{{ product.short_description }}</p>
-                <div class="read-more"><a href="#"><i class="icofont-arrow-right"></i> Read More</a></div>
+                <div class="read-more"><a href="{% url 'productDetail' product.id %}"><i class="icofont-arrow-right"></i> Read More</a></div>
               </div>
             </div>
           </div>
           {% endfor %}
          
           <div style="margin: 10px auto 10px auto;border: 2px #5faee3 solid;border-radius:10px;padding:10px;"  data-aos="fade-up" data-aos-delay="800">
-           <a href="#about" class="btn-get-started scrollto">All Products</a>
+           <a href="{% url 'products' %}" class="btn-get-started scrollto">All Products</a>
           </div>
         </div>
         
@@ -563,12 +571,21 @@
 
         <div class="row">
           {% for team in team %}
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+          <div class="col-lg-4 col-md-8 d-flex align-items-stretch">
             <div class="member" data-aos="fade-up" data-aos-delay="100">
               <div class="member-img">
-                <img src="{{ team.picture.url }}" class="img-fluid" alt="">
+                {% ifequal team.name "Muhammad Faisal" %}
+                <img src="{% static 'assets/img/faisal.jpg' %}" class="img-fluid" alt="">
+                {% endifequal %}
+                {% ifequal team.name "Tariq Mahmood" %}
+                <img src="{% static 'assets/img/tariq.jpeg' %}" class="img-fluid" alt="">
+                {% endifequal %}
+                {% ifequal team.name "Ishraque Ansari" %}
+                <img src="{% static 'assets/img/ishraque.jpeg' %}" class="img-fluid" alt="">
+              
+                {% endifequal %}
                 <div class="social">
-                  <a href=""><i class="icofont-linkedin"></i></a>
+                  <a href=""><i class="icon-linkedin"></i></a>
                 </div>
               </div>
               <div class="member-info">
@@ -576,12 +593,12 @@
                 <span>{{ team.designation }}</span>
               </div>
               <p style='font-size:15px;font-style: italic;'>{{  team.short_description }}</p>
-              <div class="read-more"><a href="#"><i class="icofont-arrow-right"></i> Read More</a></div>
+              <!-- <div class="read-more"><a href="#"><i class="icofont-arrow-right"></i> Read More</a></div> -->
             </div>
           </div>
           {% endfor %}
           <div style="margin: 10px auto 10px auto;border: 2px #5faee3 solid;border-radius:10px;padding:10px;"  data-aos="fade-up" data-aos-delay="800">
-            <a href="#about" class="btn-get-started scrollto">View Our Team</a>
+            <a href="{% url 'team' %}" class="btn-get-started scrollto">View Our Team</a>
           </div>          
         </div>
 
@@ -743,10 +760,10 @@
               <h3>Al-Nafi Consulting</h3>
               <p>Secure your organization with ANC!</p>
               <div class="social-links">
-                <a href="#" class="twitter"><i class="icofont-twitter"></i></a>
-                <a href="#" class="facebook"><i class="icofont-facebook"></i></a>
-                <a href="#" class="instagram"><i class="icofont-instagram"></i></a>
-                <a href="#" class="linkedin"><i class="icofont-linkedin"></i></a>
+                <a href="#" class="twitter"><i class="icon-twitter"></i></a>
+                <a href="#" class="facebook"><i class="icon-facebook"></i></a>
+                <a href="#" class="instagram"><i class="icon-instagram"></i></a>
+                <a href="#" class="linkedin"><i class="icon-linkedin"></i></a>
               </div>
             </div>
           </div>
@@ -754,19 +771,19 @@
           <div class="col-lg-3 col-md-6 mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="200">
             <div class="info">
               <div>
-                <i class="ri-map-pin-line"></i>
+                <i class="icon-location-arrow"></i>
                 <p> Canada: 64 Fullerton Crecent, L3R 3G5 Markham, ON, Canada.<br/>
                   Pakistan: A-163, Block 13-C, Gulshan-e-Iqbal, Karachi.
               </p>
               </div>
 
               <div>
-                <i class="ri-mail-send-line"></i>
+                <i class="icon-inbox"></i>
                 <p>info@annaafi.org</p>
               </div>
 
               <div>
-                <i class="ri-phone-line"></i>
+                <i class="icon-phone"></i>
                 <p>+92333-0596203</p>
               </div>
 
@@ -814,7 +831,7 @@
     </div>
   </footer><!-- End Footer -->
 
-  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+  <a href="#" class="back-to-top"><i class="icon-arrow-up"></i></a>
 
   <script src="{% static 'assets/vendor/jquery/jquery.min.js' %}"></script>
   <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>

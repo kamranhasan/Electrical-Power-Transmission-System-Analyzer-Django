@@ -1,4 +1,3 @@
-
 from django.conf import settings
 from storages.backends.gcloud import GoogleCloudStorage
 from storages.utils import setting
@@ -7,7 +6,7 @@ class GoogleCloudMediaFileStorage(GoogleCloudStorage):
     """
     Google file storage class which gives a media file path from MEDIA_URL not google generated one.
     """
-    bucket_name = setting('nafi-consulting.appspot.com')
+    bucket_name = 'nafi-consulting.appspot.com'
     def url(self, name):
         """
         Gives correct MEDIA_URL and not google generated url.

@@ -6,7 +6,7 @@ from django.db import models
 # Create your models here.
 class Service(models.Model):
     name=models.CharField(max_length=300,default='')
-    picture=models.ImageField(default='default.jpg')
+    picture=models.ImageField(default='anc.jpeg')
     short_description=models.CharField(max_length=600,default='')
     complete_description=models.CharField(max_length=2000,default='')    
     def __str__(self):
@@ -14,7 +14,7 @@ class Service(models.Model):
 
 class Product(models.Model):
     name=models.CharField(max_length=300,default='')
-    picture=models.ImageField(default='default.jpg')
+    picture=models.ImageField(default='default_GE4BJy2.jpg')
     short_description=models.CharField(max_length=600,default='')
     complete_description=models.CharField(max_length=2000,default='')
     def __str__(self):
@@ -32,7 +32,7 @@ class Testimonial(models.Model):
 
 class Team(models.Model):
     name=models.CharField(max_length=300,default='')
-    picture=models.ImageField(default='male.png')
+    picture=models.ImageField(upload_to='https://storage.googleapis.com/nafi-consulting.appspot.com/media/',default='male.png')
     designation=models.CharField(max_length=400,default='')
     short_description=models.CharField(max_length=400,default='')
     complete_description=models.CharField(max_length=2000,default='')

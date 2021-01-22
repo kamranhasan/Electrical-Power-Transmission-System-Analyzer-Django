@@ -153,9 +153,9 @@
             <div class="col-md-6 d-flex align-items-stretch">
               <div class="card" style="background-image: url({{ product.picture.url }});background-size:contain" data-aos="fade-up" data-aos-delay="100">
                 <div class="card-body">
-                  <h5 class="card-title"><a href="">{{ product.name }}</a></h5>
+                  <h5 class="card-title"><a href="{% url 'productDetail' product.id %}">{{ product.name }}</a></h5>
                   <p class="card-text">{{ product.short_description }}</p>
-                  <div class="read-more"><a href="#"><i class="icofont-arrow-right"></i> Read More</a></div>
+                  <div class="read-more"><a href="{% url 'productDetail' product.id %}"><i class="icofont-arrow-right"></i> Read More</a></div>
                 </div>
               </div>
             </div>

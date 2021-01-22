@@ -155,8 +155,8 @@
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
               <div class="icon"><i class="bx bxl-dribbble"></i></div>
-              <h4 class="title"><a href="">{{ service.name }}</a></h4>
-              <p class="description">{{ service.complete_description }}</p>
+              <h4 class="title"><a href="{% url 'serviceDetail' service.id %}">{{ service.name }}</a></h4>
+              <p class="description">{{ service.short_description }}</p>
             </div>
           </div>
           {% endfor %}
