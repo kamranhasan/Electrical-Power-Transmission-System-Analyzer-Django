@@ -12,6 +12,42 @@ class Service(models.Model):
     def __str__(self):
         return self.name
 
+class Audit_Service(models.Model):
+    name=models.CharField(max_length=300,default='')
+    picture=models.ImageField(default='anc.jpeg')
+    short_description=models.CharField(max_length=600,default='')
+    complete_description=models.CharField(max_length=2000,default='')    
+    def __str__(self):
+        return self.name
+
+class IS_Security_Service(models.Model):
+    name=models.CharField(max_length=300,default='')
+    picture=models.ImageField(default='anc.jpeg')
+    short_description=models.CharField(max_length=600,default='')
+    complete_description=models.CharField(max_length=2000,default='')    
+    def __str__(self):
+        return self.name
+
+class IS_Consultancy_Service(models.Model):
+    name=models.CharField(max_length=300,default='')
+    picture=models.ImageField(default='anc.jpeg')
+    short_description=models.CharField(max_length=600,default='')
+    complete_description=models.CharField(max_length=2000,default='')    
+    def __str__(self):
+        return self.name
+
+
+class Software_Solutions_Service(models.Model):
+    name=models.CharField(max_length=300,default='')
+    picture=models.ImageField(default='anc.jpeg')
+    short_description=models.CharField(max_length=600,default='')
+    complete_description=models.CharField(max_length=2000,default='')    
+    def __str__(self):
+        return self.name
+
+
+
+
 class Product(models.Model):
     name=models.CharField(max_length=300,default='')
     picture=models.ImageField(default='default_GE4BJy2.jpg')

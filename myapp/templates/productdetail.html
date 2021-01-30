@@ -27,6 +27,7 @@
 
   <!-- Template Main CSS File -->
   <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 
  </head>
 
@@ -44,41 +45,51 @@
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-            <li class="active"><a href="{% url 'index' %}">Home</a></li>
-            <li><a href="{% url 'index' %}#about">About</a></li>
-            <li><a href="{% url 'services' %}">Services</a></li>
-            <li><a href="{% url 'products' %}">Products</a></li>
-            <li><a href="{% url 'team' %}">Team</a></li>
-            <li class="drop-down"><a href="">Nafi Linux Tools</a>
-              <ul>
-                <li><a href="{% url 'nafilinux' %}">Information Gathering</a></li>
-                <!-- <li class="drop-down"><a href="#"></a>
-                  <ul>
-                    <li><a href="#">Deep Drop Down 1</a></li>
-                    <li><a href="#">Deep Drop Down 2</a></li>
-                    <li><a href="#">Deep Drop Down 3</a></li>
-                    <li><a href="#">Deep Drop Down 4</a></li>
-                    <li><a href="#">Deep Drop Down 5</a></li>
-                  </ul>
-                </li> -->
-                <li><a href="{% url 'nafilinux' %}">Vulnerability Analysis</a></li>
-                <li><a href="{% url 'nafilinux' %}">Wireless Attacks</a></li>
-                <li><a href="{% url 'nafilinux' %}">Exploitation Tools</a></li>
-                <li><a href="{% url 'nafilinux' %}">Stress Testing</a></li>
-                <li><a href="{% url 'nafilinux' %}">Forensics Tools</a></li>
-                <li><a href="{% url 'nafilinux' %}">Sniffing & Spoofing</a></li>
-                <li><a href="{% url 'nafilinux' %}">Password Attacks</a></li>
-                <li><a href="{% url 'nafilinux' %}">Maintaining Access</a></li>
-                <li><a href="{% url 'nafilinux' %}">Reverse Engineering</a></li>
-                <li><a href="{% url 'nafilinux' %}">Reporting Tools</a></li>
-                <li><a href="{% url 'nafilinux' %}">Hardware Hacking</a></li>
-              </ul>
-            </li>
-            <li><a href="#contact">Contact</a></li>
-  
-            <li class="get-started"><a href="#about">Get Started</a></li>
-          </ul>
-          </nav><!-- .nav-menu -->
+          <li class="active"><a href="{% url 'index' %}">Home</a></li>
+          <li><a href="{% url 'index' %}#about">About</a></li>
+          <li class='drop-down'><a href="{% url 'services' %}">Services</a>
+            <ul>
+              <li><a href="{% url 'services' %}#audit">IS Audit & Governance</a></li>
+              <li><a href="{% url 'services' %}#security">IS Security</a></li>
+              <li><a href="{% url 'services' %}#consulting">IS Consulting</a></li>
+              <li><a href="{% url 'services' %}#solutions">Software Solutions</a></li>
+            </ul>
+          </li>
+         <li><a href="{% url 'products' %}">Products</a></li>
+          <li><a href="{% url 'team' %}">Team</a></li>
+          <li class="drop-down"><a href="">Nafi Linux Tools</a>
+            <ul>
+              <li><a href="{% url 'nafilinux' %}#Information">Information Gathering</a></li>
+              <!-- <li class="drop-down"><a href="#"></a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li> -->
+              <li><a href="{% url 'nafilinux' %}#Vulnerability">Vulnerability Analysis</a></li>
+              <li><a href="{% url 'nafilinux' %}#Wireless">Wireless Attacks</a></li>
+              <li><a href="{% url 'nafilinux' %}#Exploitation">Exploitation Tools</a></li>
+              <li><a href="{% url 'nafilinux' %}#Stress">Stress Testing</a></li>
+              <li><a href="{% url 'nafilinux' %}#Forensics">Forensics Tools</a></li>
+              <li><a href="{% url 'nafilinux' %}#Sniffing">Sniffing & Spoofing</a></li>
+              <li><a href="{% url 'nafilinux' %}#Password">Password Attacks</a></li>
+              <li><a href="{% url 'nafilinux' %}#Maintaining">Maintaining Access</a></li>
+              <li><a href="{% url 'nafilinux' %}#Reverse">Reverse Engineering</a></li>
+              <li><a href="{% url 'nafilinux' %}#Reporting">Reporting Tools</a></li>
+              <li><a href="{% url 'nafilinux' %}#Hardware">Hardware Hacking</a></li>
+
+
+
+            </ul>
+          </li>
+          <!-- <li><a href="#contact">Contact</a></li> -->
+
+          <li class="get-started"><a href="#contact">Contact us</a></li>
+        </ul>
+      </nav><!-- .nav-menu -->
 
     </div>
   </header><!-- End Header -->

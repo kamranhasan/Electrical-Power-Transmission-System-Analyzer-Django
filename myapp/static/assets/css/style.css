@@ -1,13 +1,4 @@
-/**
-* Template Name: Vesperr - v2.3.0
-* Template URL: https://bootstrapmade.com/vesperr-free-bootstrap-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 
-/*--------------------------------------------------------------
-# General
---------------------------------------------------------------*/
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
@@ -758,7 +749,7 @@ section {
   margin-bottom: 0;
 }
 
-.services .icon-box:hover .title a, .services .icon-box:hover .description {
+.services .icon-box:hover .tag .title a, .services .icon-box:hover .description {
   color: #fff;
 }
 

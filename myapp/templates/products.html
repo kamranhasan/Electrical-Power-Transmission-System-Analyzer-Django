@@ -28,6 +28,7 @@
 
   <!-- Template Main CSS File -->
   <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 
   </head>
 
@@ -45,40 +46,50 @@
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-            <li class="active"><a href="{% url 'index' %}">Home</a></li>
-            <li><a href="{% url 'index' %}#about">About</a></li>
-            <li><a href="{% url 'services' %}">Services</a></li>
-            <li><a href="{% url 'products' %}">Products</a></li>
-            <li><a href="{% url 'team' %}">Team</a></li>
-            <li class="drop-down"><a href="">Nafi Linux Tools</a>
-              <ul>
-                <li><a href="{% url 'nafilinux' %}">Information Gathering</a></li>
-                <!-- <li class="drop-down"><a href="#"></a>
-                  <ul>
-                    <li><a href="#">Deep Drop Down 1</a></li>
-                    <li><a href="#">Deep Drop Down 2</a></li>
-                    <li><a href="#">Deep Drop Down 3</a></li>
-                    <li><a href="#">Deep Drop Down 4</a></li>
-                    <li><a href="#">Deep Drop Down 5</a></li>
-                  </ul>
-                </li> -->
-                <li><a href="{% url 'nafilinux' %}">Vulnerability Analysis</a></li>
-                <li><a href="{% url 'nafilinux' %}">Wireless Attacks</a></li>
-                <li><a href="{% url 'nafilinux' %}">Exploitation Tools</a></li>
-                <li><a href="{% url 'nafilinux' %}">Stress Testing</a></li>
-                <li><a href="{% url 'nafilinux' %}">Forensics Tools</a></li>
-                <li><a href="{% url 'nafilinux' %}">Sniffing & Spoofing</a></li>
-                <li><a href="{% url 'nafilinux' %}">Password Attacks</a></li>
-                <li><a href="{% url 'nafilinux' %}">Maintaining Access</a></li>
-                <li><a href="{% url 'nafilinux' %}">Reverse Engineering</a></li>
-                <li><a href="{% url 'nafilinux' %}">Reporting Tools</a></li>
-                <li><a href="{% url 'nafilinux' %}">Hardware Hacking</a></li>
-              </ul>
-            </li>
-            <li><a href="#contact">Contact</a></li>
-  
-            <li class="get-started"><a href="#about">Get Started</a></li>
-          </ul>
+          <li class="active"><a href="{% url 'index' %}">Home</a></li>
+          <li><a href="{% url 'index' %}#about">About</a></li>
+          <li class='drop-down'><a href="{% url 'services' %}">Services</a>
+            <ul>
+              <li><a href="{% url 'services' %}#audit">IS Audit & Governance</a></li>
+              <li><a href="{% url 'services' %}#security">IS Security</a></li>
+              <li><a href="{% url 'services' %}#consulting">IS Consulting</a></li>
+              <li><a href="{% url 'services' %}#solutions">Software Solutions</a></li>
+            </ul>
+          </li>
+         <li><a href="{% url 'products' %}">Products</a></li>
+          <li><a href="{% url 'team' %}">Team</a></li>
+          <li class="drop-down"><a href="">Nafi Linux Tools</a>
+            <ul>
+              <li><a href="{% url 'nafilinux' %}#Information">Information Gathering</a></li>
+              <!-- <li class="drop-down"><a href="#"></a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li> -->
+              <li><a href="{% url 'nafilinux' %}#Vulnerability">Vulnerability Analysis</a></li>
+              <li><a href="{% url 'nafilinux' %}#Wireless">Wireless Attacks</a></li>
+              <li><a href="{% url 'nafilinux' %}#Exploitation">Exploitation Tools</a></li>
+              <li><a href="{% url 'nafilinux' %}#Stress">Stress Testing</a></li>
+              <li><a href="{% url 'nafilinux' %}#Forensics">Forensics Tools</a></li>
+              <li><a href="{% url 'nafilinux' %}#Sniffing">Sniffing & Spoofing</a></li>
+              <li><a href="{% url 'nafilinux' %}#Password">Password Attacks</a></li>
+              <li><a href="{% url 'nafilinux' %}#Maintaining">Maintaining Access</a></li>
+              <li><a href="{% url 'nafilinux' %}#Reverse">Reverse Engineering</a></li>
+              <li><a href="{% url 'nafilinux' %}#Reporting">Reporting Tools</a></li>
+              <li><a href="{% url 'nafilinux' %}#Hardware">Hardware Hacking</a></li>
+
+
+
+            </ul>
+          </li>
+          <!-- <li><a href="#contact">Contact</a></li> -->
+
+          <li class="get-started"><a href="#contact">Contact us</a></li>
+        </ul>
       </nav><!-- .nav-menu -->
 
     </div>
@@ -90,7 +101,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
-          <h1 data-aos="fade-up" style='color:#5faee3'>ANC Makes You Feel Safe in the Cyber World!</h1>
+          <h1 data-aos="fade-up" style='color:#5faee3'>ANC Keep Your Organization Safe in the Cyber World!</h1>
           <h2 data-aos="fade-up" data-aos-delay="400">We possess a highly professional team with a vast domain network providing our clients single window operation facility Internationally.</h2>
           <div data-aos="fade-up" data-aos-delay="800">
             <a href="#about" class="btn-get-started scrollto">Our Products</a>
@@ -167,108 +178,106 @@
       </section><!-- End More Services Section -->
   
 
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-      <div class="container">
+   <!-- ======= Contact Section ======= -->
+   <section id="contact" class="contact">
+    <div class="container">
 
-        <div class="section-title" data-aos="fade-up">
-          <h2>Contact Us</h2>
+      <div class="section-title" data-aos="fade-up">
+        <h2>Contact Us</h2>
+      </div>
+
+      <div class="row">
+
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="contact-about">
+            <h3>Al-Nafi Consulting</h3>
+            <p>Secure your organization with ANC!</p>
+            <div class="social-links">
+              <a href="#" class="twitter"><i class="icon-twitter"></i></a>
+              <a href="#" class="facebook"><i class="icon-facebook"></i></a>
+              <a href="#" class="instagram"><i class="icon-instagram"></i></a>
+              <a href="#" class="linkedin"><i class="icon-linkedin"></i></a>
+            </div>
+          </div>
         </div>
 
-        <div class="row">
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="contact-about">
-              <h3>Al-Nafi Consulting</h3>
-              <p>Secure your organization with ANC!</p>
-              <div class="social-links">
-                <a href="#" class="twitter"><i class="icofont-twitter"></i></a>
-                <a href="#" class="facebook"><i class="icofont-facebook"></i></a>
-                <a href="#" class="instagram"><i class="icofont-instagram"></i></a>
-                <a href="#" class="linkedin"><i class="icofont-linkedin"></i></a>
-              </div>
+        <div class="col-lg-3 col-md-6 mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="200">
+          <div class="info">
+            <div>
+              <i class="icon-location-arrow"></i>
+              <p> Canada: 64 Fullerton Crecent, L3R 3G5 Markham, ON, Canada.<br/>
+                Pakistan: A-163, Block 13-C, Gulshan-e-Iqbal, Karachi.
+            </p>
             </div>
-          </div>
 
-          <div class="col-lg-3 col-md-6 mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="200">
-            <div class="info">
-              <div>
-                <i class="ri-map-pin-line"></i>
-                <p> Canada: 64 Fullerton Crecent, L3R 3G5 Markham, ON, Canada.<br/>
-                  Pakistan: A-163, Block 13-C, Gulshan-e-Iqbal, Karachi.
-              </p>
-              </div>
-
-              <div>
-                <i class="ri-mail-send-line"></i>
-                <p>info@annaafi.org</p>
-              </div>
-
-              <div>
-                <i class="ri-phone-line"></i>
-                <p>+92333-0596203</p>
-              </div>
-
+            <div>
+              <i class="icon-inbox"></i>
+              <p>info@annaafi.org</p>
             </div>
+
+            <div>
+              <i class="icon-phone"></i>
+              <p>+92333-0596203</p>
+            </div>
+
           </div>
+        </div>
 
-          <div class="col-lg-5 col-md-12" data-aos="fade-up" data-aos-delay="300">
-            <form action="{% url 'contacted' %}#contacted" method="POST" >
-              {% csrf_token %}
-              {% block contactform %}
-              {% load crispy_forms_tags %}
-          {{ contact|crispy}}
-              <!-- <div class="text-center"><button type="submit">{{ respond }}</button></div> -->
-              <button id='contacted' type="submit" style='margin:3px auto 3px auto;border: 2px #5faee3 solid;border-radius:10px;padding:10px;background-color: white;'>{{ respond }}</button>
+        <div class="col-lg-5 col-md-12" data-aos="fade-up" data-aos-delay="300">
+          <form action="{% url 'contacted' %}#contacted" method="POST" >
+            {% csrf_token %}
+            {% block contactform %}
+            {% load crispy_forms_tags %}
+        {{ contact|crispy}}
+            <!-- <div class="text-center"><button type="submit">{{ respond }}</button></div> -->
+            <button id='contacted' type="submit" style='margin:3px auto 3px auto;border: 2px #5faee3 solid;border-radius:10px;padding:10px;background-color: white;'>{{ respond }}</button>
 
-              {% endblock contactform %}
-            </form>
-          </div>
-
+            {% endblock contactform %}
+          </form>
         </div>
 
       </div>
-    </section><!-- End Contact Section -->
 
-  </main><!-- End #main -->
+    </div>
+  </section><!-- End Contact Section -->
 
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="container">
-      <div class="row d-flex align-items-center">
-        <div class="col-lg-6 text-lg-left text-center">
-          <div class="copyright">
-            &copy; Copyright <strong>Al-Nafi</strong>. All Rights Reserved
-          </div>
+</main><!-- End #main -->
+
+<!-- ======= Footer ======= -->
+<footer id="footer">
+  <div class="container">
+    <div class="row d-flex align-items-center">
+      <div class="col-lg-6 text-lg-left text-center">
+        <div class="copyright">
+          &copy; Copyright <strong>Al-Nafi</strong>. All Rights Reserved
         </div>
-        <div class="col-lg-6">
-          <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
-            <a href="#intro" class="scrollto">Home</a>
-            <a href="#about" class="scrollto">About</a>
-            <!-- <a href="#">Privacy Policy</a> -->
-            <!-- <a href="#">Terms of Use</a> -->
-          </nav>
-        </div>
+      </div>
+      <div class="col-lg-6">
+        <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
+          <a href="#intro" class="scrollto">Home</a>
+          <a href="#about" class="scrollto">About</a>
+          <!-- <a href="#">Privacy Policy</a> -->
+          <!-- <a href="#">Terms of Use</a> -->
+        </nav>
       </div>
     </div>
-  </footer><!-- End Footer -->
+  </div>
+</footer><!-- End Footer -->
 
-  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+<a href="#" class="back-to-top"><i class="icon-arrow-up"></i></a>
 
-  <!-- Vendor JS Files -->
-  <script src="{% static 'assets/vendor/jquery/jquery.min.js' %}"></script>
-  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-  <script src="{% static 'assets/vendor/jquery.easing/jquery.easing.min.js' %}"></script>
-  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
-  <script src="{% static 'assets/vendor/waypoints/jquery.waypoints.min.js' %}"></script>
-  <script src="{% static 'assets/vendor/counterup/counterup.min.js' %}"></script>
-  <script src="{% static 'assets/vendor/owl.carousel/owl.carousel.min.js' %}"></script>
-  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
-  <script src="{% static 'assets/vendor/venobox/venobox.min.js' %}"></script>
-  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+<script src="{% static 'assets/vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'assets/vendor/jquery.easing/jquery.easing.min.js' %}"></script>
+<script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+<script src="{% static 'assets/vendor/waypoints/jquery.waypoints.min.js' %}"></script>
+<script src="{% static 'assets/vendor/counterup/counterup.min.js' %}"></script>
+<script src="{% static 'assets/vendor/owl.carousel/owl.carousel.min.js' %}"></script>
+<script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'assets/vendor/venobox/venobox.min.js' %}"></script>
+<script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
 
-  <!-- Template Main JS File -->
-  <script src="{% static 'assets/js/main.js' %}"></script>
+<script src="{% static 'assets/js/main.js' %}"></script>
 {% endblock content %}
 </body>
 

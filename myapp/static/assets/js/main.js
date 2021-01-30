@@ -28,7 +28,7 @@
 
         if ($('body').hasClass('mobile-nav-active')) {
           $('body').removeClass('mobile-nav-active');
-          $('.mobile-nav-toggle i').toggleClass('icon-list');
+          $('.mobile-nav-toggle i').toggleClass('icon-navigation-menu');
           $('.mobile-nav-overly').fadeOut();
         }
         return false;
@@ -55,12 +55,12 @@
       class: 'mobile-nav d-lg-none'
     });
     $('body').append($mobile_nav);
-    $('body').prepend('<button type="button" class="mobile-nav-toggle d-lg-none"><i class="icon-list"></i></button>');
+    $('body').prepend('<button type="button" class="mobile-nav-toggle d-lg-none"><i class="icon-tasks" style="color: #5faee3"></i></button>');
     $('body').append('<div class="mobile-nav-overly"></div>');
 
     $(document).on('click', '.mobile-nav-toggle', function(e) {
       $('body').toggleClass('mobile-nav-active');
-      $('.mobile-nav-toggle i').toggleClass('icon-list');
+      $('.mobile-nav-toggle i').toggleClass('icon-collapse-top');
       $('.mobile-nav-overly').toggle();
     });
 
@@ -75,7 +75,7 @@
       if (!container.is(e.target) && container.has(e.target).length === 0) {
         if ($('body').hasClass('mobile-nav-active')) {
           $('body').removeClass('mobile-nav-active');
-          $('.mobile-nav-toggle i').toggleClass('icon-list');
+          $('.mobile-nav-toggle i').toggleClass('icon-tasks');
           $('.mobile-nav-overly').fadeOut();
         }
       }

@@ -3,14 +3,20 @@ from .models import *
 from .forms import Messages
 # Create your views here.
 def index(request):
-    service = Service.objects.all()[:8]
+    service1 = Audit_Service.objects.all()
+    service2 = IS_Consultancy_Service.objects.all()
+    service3 = IS_Security_Service.objects.all()
+    service4 = Software_Solutions_Service.objects.all()
     product = Product.objects.all()[:4]
     testimonial = Testimonial.objects.all()
     team = Team.objects.all()[:4]
     contact = Messages()
     respond = 'Send Message'
     context = {
-        'service' : service,
+        'service1' : service1,
+        'service2' : service2,
+        'service3' : service3,
+        'service4' : service4,
         'product' : product, 
         'testimonial' : testimonial,
         'team' : team,
@@ -55,8 +61,40 @@ def productDetail(request,id):
                 )
 
 
-def serviceDetail(request,id):
-    service=Service.objects.get(id=id)
+def auditDetail(request,id):
+    service=Audit_Service.objects.get(id=id)
+    contact = Messages()
+    respond = 'Send Message'
+    return render(request, 'servicedetail.html',{'service': service,
+                                                'contact' : contact,
+                                                'respond' : respond
+                                                }
+                )
+
+def consultingDetail(request,id):
+    service=IS_Consultancy_Service.objects.get(id=id)
+    contact = Messages()
+    respond = 'Send Message'
+    return render(request, 'servicedetail.html',{'service': service,
+                                                'contact' : contact,
+                                                'respond' : respond
+                                                }
+                )
+
+
+def securityDetail(request,id):
+    service=IS_Security_Service.objects.get(id=id)
+    contact = Messages()
+    respond = 'Send Message'
+    return render(request, 'servicedetail.html',{'service': service,
+                                                'contact' : contact,
+                                                'respond' : respond
+                                                }
+                )
+
+
+def solutionDetail(request,id):
+    service=Software_Solutions_Service.objects.get(id=id)
     contact = Messages()
     respond = 'Send Message'
     return render(request, 'servicedetail.html',{'service': service,
@@ -67,12 +105,18 @@ def serviceDetail(request,id):
 
 
 def services(request):
-    service=Service.objects.all()
+    service1 = Audit_Service.objects.all()
+    service2 = IS_Consultancy_Service.objects.all()
+    service3 = IS_Security_Service.objects.all()
+    service4 = Software_Solutions_Service.objects.all()
     contact = Messages()
     respond = 'Send Message'
-    return render(request, 'services.html',{'service': service,
-                                                'contact' : contact,
-                                                'respond' : respond
+    return render(request, 'services.html',{'service1': service1,
+                                            'service2': service2,
+                                            'service3': service3,
+                                            'service4': service4,
+                                            'contact' : contact,
+                                            'respond' : respond
                                             }
                 )
 
