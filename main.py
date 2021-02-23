@@ -6,5 +6,5 @@ from website.wsgi import application
 # application from mysite/wsgi.py and renames it app so it is discoverable by
 # App Engine without additional configuration.
 # Alternatively, you can add a custom entrypoint field in your app.yaml:
-# entrypoint: gunicorn -b :$PORT mysite.wsgi
+#entrypoint: gunicorn -b :$PORT website.wsgi
 app = application

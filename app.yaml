@@ -9,3 +9,6 @@ handlers:
   script: auto
   
 
+# libraries:
+# - name: django_otp
+#   version: "1.0.2"
