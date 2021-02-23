@@ -26,6 +26,8 @@ from django_otp.plugins.otp_totp.models import TOTPDevice
 from django_otp.plugins.otp_totp.admin import TOTPDeviceAdmin
 
 
+from myapp.models import *
+
 class OTPAdmin(OTPAdminSite):
     pass
 
@@ -33,6 +35,19 @@ class OTPAdmin(OTPAdminSite):
 admin_site = OTPAdmin(name='OTPAdmin')
 admin_site.register(User)
 admin_site.register(TOTPDevice, TOTPDeviceAdmin)
+
+# Register your models here.
+admin_site.register(Service)
+admin_site.register(Product)
+admin_site.register(Testimonial)
+admin_site.register(Team)
+admin_site.register(Contact)
+admin_site.register(Packages)
+admin_site.register(Audit_Service)
+admin_site.register(IS_Security_Service)
+admin_site.register(IS_Consultancy_Service)
+admin_site.register(Software_Solutions_Service)
+
 
 
 
