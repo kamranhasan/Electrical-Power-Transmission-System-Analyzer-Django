@@ -9,7 +9,7 @@ def index(request):
     service4 = Software_Solutions_Service.objects.all()
     product = Product.objects.all()[:4]
     testimonial = Testimonial.objects.all()
-    team = Team.objects.all()[:4]
+    team = Team.objects.all().order_by('id')[:3]
     contact = Messages()
     respond = 'Send Message'
     context = {
@@ -132,7 +132,7 @@ def products(request):
                 )
 
 def team(request):
-    team=Team.objects.all()
+    team=Team.objects.all().order_by('id')
     contact = Messages()
     respond = 'Send Message'
     return render(request, 'team.html',{'team': team,
@@ -186,3 +186,21 @@ def nafilinux(request):
                 'respond' : respond,
                 }
     return render(request, 'nafilinux.html',context )
+
+
+
+def auditservice(request):
+    contact = Messages()
+    respond = 'Send Message'
+    return render(request, 'auditservice.html',{'contact' : contact,
+                                            'respond' : respond
+                                            }
+                )
+
+def auditrevolution(request):
+    contact = Messages()
+    respond = 'Send Message'
+    return render(request, 'auditrevolution.html',{'contact' : contact,
+                                            'respond' : respond
+                                            }
+                )

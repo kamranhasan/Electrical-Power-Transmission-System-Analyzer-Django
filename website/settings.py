@@ -79,22 +79,22 @@ WSGI_APPLICATION = 'website.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
 DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'HOST': '/cloudsql/nafi-consulting:us-central1:consulting',
-            'USER': 'consulting',
-            'PASSWORD': 'consult_0445',
-            'NAME': 'nafi',
-            # 'PORT': '3306',
-        }
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
+}
+# DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#             'HOST': '/cloudsql/nafi-consulting:us-central1:consulting',
+#             'USER': 'consulting',
+#             'PASSWORD': 'consult_0445',
+#             'NAME': 'nafi',
+#             # 'PORT': '3306',
+#         }
+#     }
 
 # if os.getenv('GAE_APPLICATION', None):
 #     # Running on production App Engine, so connect to Google Cloud SQL using

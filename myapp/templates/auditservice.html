@@ -118,13 +118,13 @@ canvas {
       <div class="row" >   
    
         <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
-          <h1 data-aos="fade-up" style='color:#5faee3;font-size:30px'>ANC provides industry-focused services for public and private clients.
+          <h1 data-aos="fade-up" style='color:#5faee3;font-size:30px'>Audit and Assurance
 
           </h1> 
         
-          <h2 data-aos="fade-up" data-aos-delay="400">Our experienced staff, combined with our global network, allow us to provide the support you need - whenever you need it, at home and abroad, whatever the size of your organization.</h2>
+          <h2 data-aos="fade-up" data-aos-delay="400">Helping you navigate regulatory complexity and strengthen trust and transparency.</h2>
           <div data-aos="fade-up" data-aos-delay="800">
-            <a href="#services" class="btn-get-started scrollto">Our Services</a>
+            <a href="#service" class="btn-get-started scrollto">IS Audit & Governance</a>
           </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left" data-aos-delay="200"> 
@@ -150,8 +150,8 @@ canvas {
       <div class="container">
 
 
-          <div  class="col-lg-3" style='margin:0 auto 0 auto'>
-            <img src="{% static 'assets/img/favicon.png' %}" class="img-fluid"  alt="ANNAAFI CONSULTING">
+          <div  class="col-lg-3" style='margin:0 auto 0 auto '>
+            <img  src="{% static 'assets/img/favicon.png' %}" class="img-fluid"  alt="ANNAAFI CONSULTING">
           </div>
 
           
@@ -160,67 +160,111 @@ canvas {
     </section><!-- End Clients Section -->
 
     <!-- ======= Services Section ======= -->
-    <section id="services" class="services" style='background-color: white;'>
-      <div class="container">
+  
 
-        <div class="section-title" data-aos="fade-up">
-          <h2>Explore ANC | Global Services</h2>
-          <p>We strive to make a difference in the World</p>
+
+    <!-- ======= About Us Section ======= -->
+    <section id="service" class="about" style='background: white;'>
+        <div class="container">
+  
+          <div class="section-title" data-aos="fade-up">
+            <h2>Delivering value and confidence</h2>
+          </div>
+  
+          <div class="row content">
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="150">
+              <p>
+                It’s hard to know how to steer your business with the pace and turbulence of shifting regulations, technology and competition. We can help you deliver a clear path to value through improved transparency with stakeholders, confidently protecting and reporting on information for your business.
+<ul>
+                <li><i class="icon-check"></i>We bring new perspectives, harnessing specialized knowledge of your business, industry, and regulations to deliver deeper insights and advice across your organization.</li>
+                <li><i class="icon-check"></i> We are results driven and aim to provide value for money. We agree the remit, we agree the budget, we agree the timescales and then we deliver with constant feedback throughout our commissions to ensure objectives are achieved.</li>
+  
+              </ul>
+            </div>
+            
+              
+            <div class="col-lg-4 pt-4 pt-lg-0" data-aos="fade-up" data-aos-delay="300">
+                   <!-- <div class="testimonial-wrap"> -->
+                      <div class="testimonial-item" style='margin:0px 0px 0px 50px'>
+                        <img src="{% static 'assets/img/tariq.jpeg' %}" class="testimonial-img" alt="" style='width:300px;height:250px'>
+                        <h3>Tariq Mahmood</h3>
+                        <h4>Global Assurance Leader, Partner</h4>
+                        <p>Email: tariq@annaafi.org<br/>Phone: 00965-66112545<i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                        </p>
+                      </div>
+                    <!-- </div> -->
+                 
+                <!-- <p>
+                We provide disruptive defenses, we understand that no matter how good your defenses are, they can be breached, so we focus our attention on protecting our clients' systems.</p>
+              <a href="#services" class="btn-learn-more">What we Offer</a> -->
+            </div>
+          </div>
+  
         </div>
+      </section><!-- End About Us Section -->
+      <section id="about" class="about" style="background: #011073;height:230px;text-align:center; font-family: 'Waiting for the Sunrise', cursive; 
+      font-size:20px; 
+       letter-spacing: 6px; 
+      font-weight: bold;">
+  
+        <link href="https://fonts.googleapis.com/css?family=Waiting+for+the+Sunrise" rel="stylesheet" type="text/css"/>
 
-        <div class="row">
-          
-          <div id='audit' class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-           <a  href="{% url 'auditservice' %}">
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="100"></a>
-              <div class="icon"><i class="icon-dribbble"></i></div>
-              <h4 class="title"><a href="{% url 'auditservice' %}">IS Audit & Governance</a></h4>
-              <p class="card-text">Helping you navigate regulatory complexity and strengthen trust and transparency.</p>
-              <!-- {% for service in service1 %}
-              <p class="description"><a href="{% url 'audit' service.id %}" class='tag'>{{ service.name }}</a></p>
-              {% endfor %} -->
+  
+        <a href='' style='color:white;' >  <div id="typedtext"></div></a>
+        <div data-aos="fade-up" data-aos-delay="800"><br/>  
+            <a href="{% url 'auditrevolution' %}" class="btn-get-started scrollto" style='border:2px solid ;padding 5px'>Audit Revolution ></a>
+          </div>
+        <script>
+            // set up text to print, each item in array is new line
+var aText = new Array(
+"Unlock the full value of the audit through Innovation"
+);
+var iSpeed = 100; // time delay of print out
+var iIndex = 0; // start printing array at this posision
+var iArrLength = aText[0].length; // the length of the text array
+var iScrollAt = 20; // start scrolling up at this many lines
+ 
+var iTextPos = 0; // initialise text position
+var sContents = ''; // initialise contents variable
+var iRow; // initialise current row
+ 
+function typewriter()
+{
+ sContents =  ' ';
+ iRow = Math.max(0, iIndex-iScrollAt);
+ var destination = document.getElementById("typedtext");
+ 
+ while ( iRow < iIndex ) {
+  sContents += aText[iRow++] + '<br />';
+ }
+ destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos) + "_";
+ if ( iTextPos++ == iArrLength ) {
+  iTextPos = 0;
+  iIndex++;
+  if ( iIndex != aText.length ) {
+   iArrLength = aText[iIndex].length;
+   setTimeout("typewriter()", 500);
+  }
+ } else {
+  setTimeout("typewriter()", iSpeed);
+ }
+}
+
+
+typewriter();
+        </script>
+  
+     
+                      
+                <!-- <p>
+                We provide disruptive defenses, we understand that no matter how good your defenses are, they can be breached, so we focus our attention on protecting our clients' systems.</p>
+              <a href="#services" class="btn-learn-more">What we Offer</a> -->
             </div>
           </div>
-
-          <div id='security' class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-              <div class="icon"><i class="icon-dribbble"></i></div>
-              <h4 class="title"><a>Risk Assurance and Digital Forensics</a></h4>
-              <p class="card-text">With the proper risk management procedures in place, you can identify threats, avoid surprises and manage risk effectively.</p>
-              <!-- {% for service in service2 %}
-              <p class="description"><a href="{% url 'security' service.id %}" class='tag'>{{ service.name }}</a></p>
-              {% endfor %} -->
-            </div>
-          </div>
-
-          <div id='consulting' class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-              <div class="icon"><i class="icon-dribbble"></i></div>
-              <h4 class="title"><a>IS Consultancy</a></h4>
-              <p class="card-text">By taking time to understand your business and the issues and challenges you are facing, our Consulting teams use local and global knowledge to help you challenge conventions and introduce and deliver strategies that work specifically for you.</p>
-
-              <!-- {% for service in service3 %}
-              <p class="description"><a href="{% url 'consulting' service.id %} class='tag'">{{ service.name }}</a></p>
-              {% endfor %} -->
-            </div>
-          </div>
-
-          <div id='solutions' class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-              <div class="icon"><i class="icon-dribbble"></i></div>
-              <h4 class="title"><a>Software Solutions</a></h4>
-              <p class="card-text">Optimize your data assets. Use data analytics and our sofware solutions to make faster and better decisions. Work more efficiently and save money.
-              </p>
-            </div>
-          </div>
-
+  
         </div>
-        
-      </div>
-    </section><!-- End Services Section -->
-
-
-
+      </section><!-- End About Us Section -->
+  
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact" style='background-color: white;'>

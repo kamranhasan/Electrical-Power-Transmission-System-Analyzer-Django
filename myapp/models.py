@@ -70,8 +70,7 @@ class Team(models.Model):
     name=models.CharField(max_length=300,default='')
     picture=models.ImageField(upload_to='https://storage.googleapis.com/nafi-consulting.appspot.com/media/',default='male.png')
     designation=models.CharField(max_length=400,default='')
-    short_description=models.CharField(max_length=400,default='')
-    complete_description=models.CharField(max_length=2000,default='')
+    short_description=models.CharField(max_length=2000,default='')
     linkedinprofile=models.CharField(max_length=400,default='https://www.linkedin.com/company/al-nafi')
     def __str__(self):
         return self.name

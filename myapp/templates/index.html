@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Annafay Consulting</title>
+  <title>Annaafi Consulting</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -37,13 +37,17 @@
   </head>
 
 <body>
+
+
+
 {% block content %}
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center">
+
     <div class="container d-flex align-items-center">
 
       <div class="logo mr-auto">
-        <h1 class="text-light"><a href="{% url 'index' %}"><span style='color:#5faee3'>ANC</span></a></h1>
+        <h1 class="text-light"><a href="{% url 'index' %}"><span style='color:#5faee3'>ANC </span></a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
@@ -51,8 +55,8 @@
       <nav class="nav-menu d-none d-lg-block">
         <ul>
           <li class="active"><a href="{% url 'index' %}">Home</a></li>
-          <li><a href="{% url 'index' %}#about">About</a></li>
-          <li class='drop-down'><a href="{% url 'services' %}">Services <i class='icon-double-angle-down'></i></a>
+          <li><a href="{% url 'index' %}#about" style='color:#5faee3'>About</a></li>
+          <li class='drop-down'><a href="{% url 'services' %}"style='color:#5faee3'>Services <i class='icon-double-angle-down'></i></a>
             <ul>
               <li><a href="{% url 'services' %}#audit">IS Audit & Governance</a></li>
               <li><a href="{% url 'services' %}#security">IS Security</a></li>
@@ -60,9 +64,9 @@
               <li><a href="{% url 'services' %}#solutions">Software Solutions</a></li>
             </ul>
           </li>
-          <li><a href="{% url 'products' %}">Products</a></li>
-          <li><a href="{% url 'team' %}">Team</a></li>
-          <li class="drop-down"><a href="">Nafi Linux Tools <i class='icon-double-angle-down'></i></a>
+          <li><a href="{% url 'products' %}"style='color:#5faee3'>Products</a></li>
+          <li><a href="{% url 'team' %}"style='color:#5faee3'>Team</a></li>
+          <li class="drop-down"><a href=""style='color:#5faee3'>Nafi Linux Tools <i class='icon-double-angle-down'></i></a>
             <ul>
               <li><a href="{% url 'nafilinux' %}#Information">Information Gathering</a></li>
               <!-- <li class="drop-down"><a href="#"></a>
@@ -97,26 +101,51 @@
       </nav><!-- .nav-menu -->
 
     </div>
+
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
 
-    <div class="container">
-      <div class="row">
+<style>
+.bg{background:url(https://1.bp.blogspot.com/-DC008lu58Nc/W1LMf54UKXI/AAAAAAAAACQ/REydlqiHDecasKOrG7qdP1Z5GQdlRDdxgCLcBGAs/s1600/galaxy-blue.jpg) no-repeat;background-size:cover;height:100%;width:100%;position:fixed;top:0;left:0;z-index:-3}.bg:before{content:'';width:100%;height:100%;background:#000;position:fixed;z-index:-1;top:0;left:0;opacity:.3}@keyframes sf-fly-by-1{from{transform:translateZ(-600px);opacity:.5}to{transform:translateZ(0);opacity:.5}}@keyframes sf-fly-by-2{from{transform:translateZ(-1200px);opacity:.5}to{transform:translateZ(-600px);opacity:.5}}@keyframes sf-fly-by-3{from{transform:translateZ(-1800px);opacity:.5}to{transform:translateZ(-1200px);opacity:.5}}.star-field{position:fixed;top:0;left:0;width:100%;height:100%;perspective:600px;-webkit-perspective:600px;z-index:-1}.star-field .layer{box-shadow:-411px -476px #cccccc,777px -407px #d4d4d4,-387px -477px #fcfcfc,-91px -235px #d4d4d4,491px -460px #f7f7f7,892px -128px #f7f7f7,758px -277px #ededed,596px 378px #cccccc,647px 423px whitesmoke,183px 389px #c7c7c7,524px -237px #f0f0f0,679px -535px #e3e3e3,158px 399px #ededed,157px 249px #ededed,81px -450px #ebebeb,719px -360px #c2c2c2,-499px 473px #e8e8e8,-158px -349px #d4d4d4,870px -134px #cfcfcf,446px 404px #c2c2c2,440px 490px #d4d4d4,414px 507px #e6e6e6,-12px 246px #fcfcfc,-384px 369px #e3e3e3,641px -413px #fcfcfc,822px 516px #dbdbdb,449px 132px #c2c2c2,727px 146px #f7f7f7,-315px -488px #e6e6e6,952px -70px #e3e3e3,-869px -29px #dbdbdb,502px 80px #dedede,764px 342px #e0e0e0,-150px -380px #dbdbdb,654px -426px #e3e3e3,-325px -263px #c2c2c2,755px -447px #c7c7c7,729px -177px #c2c2c2,-682px -391px #e6e6e6,554px -176px #ededed,-85px -428px #d9d9d9,714px 55px #e8e8e8,359px -285px #cfcfcf,-362px -508px #dedede,468px -265px #fcfcfc,74px -500px #c7c7c7,-514px 383px #dbdbdb,730px -92px #cfcfcf,-112px 287px #c9c9c9,-853px 79px #d6d6d6,828px 475px #d6d6d6,-681px 13px #fafafa,-176px 209px #f0f0f0,758px 457px #fafafa,-383px -454px #ededed,813px 179px #d1d1d1,608px 98px whitesmoke,-860px -65px #c4c4c4,-572px 272px #f7f7f7,459px 533px #fcfcfc,624px -481px #e6e6e6,790px 477px #dedede,731px -403px #ededed,70px -534px #cccccc,-23px 510px #cfcfcf,-652px -237px whitesmoke,-690px 367px #d1d1d1,810px 536px #d1d1d1,774px 293px #c9c9c9,-362px 97px #c2c2c2,563px 47px #dedede,313px 475px #e0e0e0,839px -491px #e3e3e3,-217px 377px #d4d4d4,-581px 239px #c2c2c2,-857px 72px #cccccc,-23px 340px #dedede,-837px 246px white,170px -502px #cfcfcf,822px -443px #e0e0e0,795px 497px #e0e0e0,-814px -337px #cfcfcf,206px -339px #f2f2f2,-779px 108px #e6e6e6,808px 2px #d4d4d4,665px 41px #d4d4d4,-564px 64px #cccccc,-380px 74px #cfcfcf,-369px -60px #f7f7f7,47px -495px #e3e3e3,-383px 368px #f7f7f7,419px 288px #d1d1d1,-598px -50px #c2c2c2,-833px 187px #c4c4c4,378px 325px whitesmoke,-703px 375px #d6d6d6,392px 520px #d9d9d9,-492px -60px #c4c4c4,759px 288px #ebebeb,98px -412px #c4c4c4,-911px -277px #c9c9c9;transform-style:preserve-3d;position:absolute;top:50%;left:50%;height:4px;width:4px;border-radius:2px}.star-field .layer:nth-child(1){animation:sf-fly-by-1 5s linear infinite}.star-field .layer:nth-child(2){animation:sf-fly-by-2 5s linear infinite}.star-field .layer:nth-child(3){animation:sf-fly-by-3 5s linear infinite}
+}
+
+canvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+</style>
+
+    <div class="container" >
+
+    
+      <div class="row" >   
+   
         <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
-          <h1 data-aos="fade-up" style='color:#5faee3'>Let's make a Secure Digital Pakistan</h1>
-          <h2 data-aos="fade-up" data-aos-delay="400">We possess a highly professional team with a vast domain network providing our clients single window operation facility Internationally.</h2>
+          <h1 data-aos="fade-up" style='color:#5faee3;font-size:30px'>Let's make a Secure Digital Pakistan</h1> 
+        
+          <h2 data-aos="fade-up" data-aos-delay="400">ANC aims to articulate and build differentiated and sustainable capabilities that support strategy execution and your ability to win in the market.</h2>
           <div data-aos="fade-up" data-aos-delay="800">
             <a href="#services" class="btn-get-started scrollto">What We Offer!</a>
           </div>
         </div>
-        <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left" data-aos-delay="200">
+        <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left" data-aos-delay="200"> 
           <img style='border-radius:40px 20px 50px 10px' src="{% static 'assets/img/alnafi.jpg' %}" class="img-fluid animated" alt="">
         </div>
       </div>
     </div>
-
+   
+    <div >
+    <div class="bg" style='position: absolute;'></div>
+      <div class="star-field"style='position: absolute;'   >
+      <div class="layer"style='position: absolute;'></div>
+      <div class="layer"style='position: absolute;'></div>
+      <div class="layer"style='position: absolute;'></div>
+    </div>
+  
   </section><!-- End Hero -->
 
   <main id="main">
@@ -125,39 +154,18 @@
     <section id="clients" class="clients clients">
       <div class="container">
 
-        <div class="row">
 
-          <div class="col-lg-2 col-md-4 col-6">
-            <img src="{% static 'assets/img/clients/client.png' %}" class="img-fluid" alt="" data-aos="zoom-in">
+          <div  class="col-lg-3" style='margin:0 auto 0 auto'>
+            <img src="{% static 'assets/img/favicon.png' %}" class="img-fluid"  alt="ANNAAFI CONSULTING">
           </div>
 
-          <div class="col-lg-2 col-md-4 col-6">
-            <img src="{% static 'assets/img/clients/client.png' %}" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="100">
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6">
-            <img src="{% static 'assets/img/clients/client.png' %}" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="200">
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6">
-            <img src="{% static 'assets/img/clients/client.png' %}" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="300">
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6">
-            <img src="{% static 'assets/img/clients/client.png' %}" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="400">
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6">
-            <img src="{% static 'assets/img/clients/client.png' %}" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="500">
-          </div>
-
-        </div>
+          
 
       </div>
     </section><!-- End Clients Section -->
 
     <!-- ======= About Us Section ======= -->
-    <section id="about" class="about">
+    <section id="about" class="about" style='background: white;'>
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
@@ -182,16 +190,23 @@
         </div>
 
       </div>
+      
     </section><!-- End About Us Section -->
 
     <!-- ======= Counts Section ======= -->
-    <section id="counts" class="counts">
+    <section id="counts" class="counts" style='background: white;'>
       <div class="container">
 
         <div class="row">
           <div class="image col-xl-5 d-flex align-items-stretch justify-content-center justify-content-xl-start" data-aos="fade-right" data-aos-delay="150">
             <img style='border-radius: 50px' src="{% static 'assets/img/alnafi2.jpg' %}" alt="" class="img-fluid">
+            <!-- <canvas  style='background-color: white;border-radius:200px 100px 200px 70px' id=c></canvas> -->
+
           </div>
+
+          
+
+
 
           <div class="col-xl-7 d-flex align-items-stretch pt-4 pt-xl-0" data-aos="fade-left" data-aos-delay="300">
             <div class="content d-flex flex-column justify-content-center">
@@ -240,72 +255,75 @@
     </section><!-- End Counts Section -->
 
     <!-- ======= Services Section ======= -->
-    <section id="services" class="services">
+    <section id="services" class="services" style='background: white;'>
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
-          <h2>Annafay Services</h2>
-          <p>We have a motive to make a difference in the World</p>
+          <h2>Explore ANC | Global Services</h2>
+          <p>We strive to make a difference in the World</p>
         </div>
 
         <div class="row">
-          
+          <a href="{% url 'auditservice' %}">
+         
           <div id='audit' class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+              
               <div class="icon"><i class="icon-dribbble"></i></div>
-              <h4 class="title"><a>IS Audit & Governance</a></h4>
-              {% for service in service1 %}
+              <a >
+                <h4 class="title"><a href="{% url 'auditservice' %}" >IS Audit & Governance</a></h4></a>
+              <p class="card-text">Helping you navigate regulatory complexity and strengthen trust and transparency.</p>
+           
+              <!-- {% for service in service1 %}
               <p class="description"><a href="{% url 'audit' service.id %}" class='tag'>{{ service.name }}</a></p>
-              {% endfor %}
+              {% endfor %} -->
             </div>
-          </div>
-
+          </div>  </a>
+          
+      
           <div id='security' class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
               <div class="icon"><i class="icon-dribbble"></i></div>
-              <h4 class="title"><a>IS Security</a></h4>
-              {% for service in service2 %}
+              <h4 class="title"><a href="{% url 'auditservice' %}">Risk Assurance and Digital Forensics</a></h4>
+              <p class="card-text">With the proper risk management procedures in place, you can identify threats, avoid surprises and manage risk effectively.</p>
+              <!-- {% for service in service2 %}
               <p class="description"><a href="{% url 'security' service.id %}" class='tag'>{{ service.name }}</a></p>
-              {% endfor %}
+              {% endfor %} -->
             </div>
           </div>
 
           <div id='consulting' class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
               <div class="icon"><i class="icon-dribbble"></i></div>
-              <h4 class="title"><a>IS Consultancy</a></h4>
-              {% for service in service3 %}
+              <h4 class="title"><a href="{% url 'auditservice' %}">IS Consultancy</a></h4>
+              <p class="card-text">By taking time to understand your business and the issues and challenges you are facing, our Consulting teams use local and global knowledge to help you challenge conventions and introduce and deliver strategies that work specifically for you.</p>
+
+              <!-- {% for service in service3 %}
               <p class="description"><a href="{% url 'consulting' service.id %} class='tag'">{{ service.name }}</a></p>
-              {% endfor %}
+              {% endfor %} -->
             </div>
           </div>
 
           <div id='solutions' class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
               <div class="icon"><i class="icon-dribbble"></i></div>
-              <h4 class="title"><a>Software Solutions</a></h4>
-              {% for service in service4 %}
-              <p class="description"><a href="{% url 'solution' service.id %}" class='tag'>{{ service.name }}</a></p>
-              {% endfor %}
+              <h4 class="title"><a href="{% url 'auditservice' %}">Software Solutions</a></h4>
+              <p class="card-text">Optimize your data assets. Use data analytics and our sofware solutions to make faster and better decisions. Work more efficiently and save money.
+              </p>
             </div>
           </div>
-
-         
-         
-          <div style="margin: 10px auto 10px auto;border: 2px #5faee3 solid;border-radius:10px;padding:10px;" data-aos="fade-up" data-aos-delay="800">
-            <a href="{% url 'services' %}" class="btn-get-started scrollto">All Services</a>
-          </div>          
 
         </div>
         
       </div>
     </section><!-- End Services Section -->
 
+
     <!-- ======= More Services Section ======= -->
-    <section id="more-services" class="more-services">
+    <section id="more-services" class="more-services" style='background: white;'>
       <div class="container">
         <div class="section-title" data-aos="fade-up">
-          <h2>Annafay Products</h2>
+          <h2>Annaafi Products</h2>
           <p>We provide wide range of products and solutions varying from Information Security to IT Infrastructure Development.</p>
         </div>
         <div class="row">
@@ -602,7 +620,7 @@
     <!-- End Portfolio Section -->
 
     <!-- ======= Team Section ======= -->
-    <section id="team" class="team section-bg">
+    <section id="team" class="team section-bg" >
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
@@ -616,7 +634,7 @@
             <div class="member" data-aos="fade-up" data-aos-delay="100">
               <div class="member-img">
                 {% ifequal team.name "Muhammad Faisal" %}
-                <img src="{% static 'assets/img/faisal.jpg' %}" class="img-fluid" alt="">
+                <img src="{% static 'assets/img/faisal.jpeg' %}" class="img-fluid" alt="">
                 {% endifequal %}
                 {% ifequal team.name "Tariq Mahmood" %}
                 <img src="{% static 'assets/img/tariq.jpeg' %}" class="img-fluid" alt="">
@@ -626,14 +644,14 @@
               
                 {% endifequal %}
                 <div class="social">
-                  <a href=""><i class="icon-linkedin"></i></a>
+                  <a href="{{ team.linkedinprofile }}"><i class="icon-linkedin"></i></a>
                 </div>
               </div>
               <div class="member-info">
                 <h4>{{ team.name }}</h4>
                 <span>{{ team.designation }}</span>
               </div>
-              <p style='font-size:15px;font-style: italic;'>{{  team.short_description }}</p>
+              <p style='font-size:15px;font-style: italic; padding:10px'>{{  team.short_description }}</p>
               <!-- <div class="read-more"><a href="#"><i class="icofont-arrow-right"></i> Read More</a></div> -->
             </div>
           </div>
@@ -787,18 +805,18 @@
     <!-- End F.A.Q Section -->
 
     <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
+    <section id="contact" class="contact"style='background: white;'>
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
-          <h2>Contact Us</h2>
+          <h2>Speak With Us</h2>
         </div>
 
         <div class="row">
 
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="contact-about">
-              <h3>Annafay Consulting</h3>
+              <h3>Annaafi Consulting</h3>
               <p>Secure your organization with ANC!</p>
               <div class="social-links">
                 <a href="#" class="twitter"><i class="icon-twitter"></i></a>
@@ -859,7 +877,7 @@
       <div class="row d-flex align-items-center">
         <div class="col-lg-6 text-lg-left text-center">
           <div class="copyright">
-            &copy; Copyright <strong>Annafay</strong>. All Rights Reserved
+            &copy; Copyright <strong>Annaafi</strong>. All Rights Reserved
           </div>
         </div>
         <div class="col-lg-6">
@@ -876,6 +894,363 @@
 
   <a href="#" class="back-to-top"><i class="icon-arrow-up"></i></a>
 
+
+
+<script>var w = c.width = 400,
+  h = c.height = 300,
+  ctx = c.getContext( '2d' ),
+  
+  opts = {
+    
+    range: 180,
+    baseConnections: 3,
+    addedConnections: 5,
+    baseSize: 5,
+    minSize: 1,
+    dataToConnectionSize: .4,
+    sizeMultiplier: .7,
+    allowedDist: 40,
+    baseDist: 40,
+    addedDist: 30,
+    connectionAttempts: 100,
+    
+    dataToConnections: 1,
+    baseSpeed: .04,
+    addedSpeed: .05,
+    baseGlowSpeed: .4,
+    addedGlowSpeed: .4,
+    
+    rotVelX: .003,
+    rotVelY: .002,
+    
+    repaintColor: '#111',
+    connectionColor: 'hsla(200,60%,light%,alp)',
+    rootColor: 'hsla(0,60%,light%,alp)',
+    endColor: 'hsla(160,20%,light%,alp)',
+    dataColor: 'hsla(40,80%,light%,alp)',
+    
+    wireframeWidth: .1,
+    wireframeColor: '#88f',
+    
+    depth: 250,
+    focalLength: 250,
+    vanishPoint: {
+      x: w / 2,
+      y: h / 2
+    }
+  },
+  
+  squareRange = opts.range * opts.range,
+  squareAllowed = opts.allowedDist * opts.allowedDist,
+  mostDistant = opts.depth + opts.range,
+  sinX = sinY = 0,
+  cosX = cosY = 0,
+  
+  connections = [],
+  toDevelop = [],
+  data = [],
+  all = [],
+  tick = 0,
+  totalProb = 0,
+  
+  animating = false,
+  
+  Tau = Math.PI * 2;
+
+ctx.fillStyle = 'white';
+ctx.fillRect( 0, 0, w, h );
+ctx.fillStyle = 'white';
+ctx.font = '50px Verdana';
+ctx.fillText( 'Calculating Nodes', w / 2 - ctx.measureText( 'Calculating Nodes' ).width / 2, h / 2 - 15 );
+
+window.setTimeout( init, 4 ); // to render the loading screen
+
+function init(){
+
+connections.length = 0;
+data.length = 0;
+all.length = 0;
+toDevelop.length = 0;
+
+var connection = new Connection( 0, 0, 0, opts.baseSize );
+connection.step = Connection.rootStep;
+connections.push( connection );
+all.push( connection );
+connection.link();
+
+while( toDevelop.length > 0 ){
+
+  toDevelop[ 0 ].link();
+  toDevelop.shift();
+}
+
+if( !animating ){
+  animating = true;
+  anim();
+}
+}
+function Connection( x, y, z, size ){
+
+this.x = x;
+this.y = y;
+this.z = z;
+this.size = size;
+
+this.screen = {};
+
+this.links = [];
+this.probabilities = [];
+this.isEnd = false;
+
+this.glowSpeed = opts.baseGlowSpeed + opts.addedGlowSpeed * Math.random();
+}
+Connection.prototype.link = function(){
+
+if( this.size < opts.minSize )
+  return this.isEnd = true;
+
+var links = [],
+    connectionsNum = opts.baseConnections + Math.random() * opts.addedConnections |0,
+    attempt = opts.connectionAttempts,
+    
+    alpha, beta, len,
+    cosA, sinA, cosB, sinB,
+    pos = {},
+    passedExisting, passedBuffered;
+
+while( links.length < connectionsNum && --attempt > 0 ){
+  
+  alpha = Math.random() * Math.PI;
+  beta = Math.random() * Tau;
+  len = opts.baseDist + opts.addedDist * Math.random();
+  
+  cosA = Math.cos( alpha );
+  sinA = Math.sin( alpha );
+  cosB = Math.cos( beta );
+  sinB = Math.sin( beta );
+  
+  pos.x = this.x + len * cosA * sinB;
+  pos.y = this.y + len * sinA * sinB;
+  pos.z = this.z + len *        cosB;
+  
+  if( pos.x*pos.x + pos.y*pos.y + pos.z*pos.z < squareRange ){
+  
+    passedExisting = true;
+    passedBuffered = true;
+    for( var i = 0; i < connections.length; ++i )
+      if( squareDist( pos, connections[ i ] ) < squareAllowed )
+        passedExisting = false;
+
+    if( passedExisting )
+      for( var i = 0; i < links.length; ++i )
+        if( squareDist( pos, links[ i ] ) < squareAllowed )
+          passedBuffered = false;
+
+    if( passedExisting && passedBuffered )
+      links.push( { x: pos.x, y: pos.y, z: pos.z } );
+    
+  }
+  
+}
+
+if( links.length === 0 )
+  this.isEnd = true;
+else {
+  for( var i = 0; i < links.length; ++i ){
+    
+    var pos = links[ i ],
+        connection = new Connection( pos.x, pos.y, pos.z, this.size * opts.sizeMultiplier );
+    
+    this.links[ i ] = connection;
+    all.push( connection );
+    connections.push( connection );
+  }
+  for( var i = 0; i < this.links.length; ++i )
+    toDevelop.push( this.links[ i ] );
+}
+}
+Connection.prototype.step = function(){
+
+this.setScreen();
+this.screen.color = ( this.isEnd ? opts.endColor : opts.connectionColor ).replace( 'light', 30 + ( ( tick * this.glowSpeed ) % 30 ) ).replace( 'alp', .2 + ( 1 - this.screen.z / mostDistant ) * .8 );
+
+for( var i = 0; i < this.links.length; ++i ){
+  ctx.moveTo( this.screen.x, this.screen.y );
+  ctx.lineTo( this.links[ i ].screen.x, this.links[ i ].screen.y );
+}
+}
+Connection.rootStep = function(){
+this.setScreen();
+this.screen.color = opts.rootColor.replace( 'light', 30 + ( ( tick * this.glowSpeed ) % 30 ) ).replace( 'alp', ( 1 - this.screen.z / mostDistant ) * .8 );
+
+for( var i = 0; i < this.links.length; ++i ){
+  ctx.moveTo( this.screen.x, this.screen.y );
+  ctx.lineTo( this.links[ i ].screen.x, this.links[ i ].screen.y );
+}
+}
+Connection.prototype.draw = function(){
+ctx.fillStyle = this.screen.color;
+ctx.beginPath();
+ctx.arc( this.screen.x, this.screen.y, this.screen.scale * this.size, 0, Tau );
+ctx.fill();
+}
+function Data( connection ){
+
+this.glowSpeed = opts.baseGlowSpeed + opts.addedGlowSpeed * Math.random();
+this.speed = opts.baseSpeed + opts.addedSpeed * Math.random();
+
+this.screen = {};
+
+this.setConnection( connection );
+}
+Data.prototype.reset = function(){
+
+this.setConnection( connections[ 0 ] );
+this.ended = 2;
+}
+Data.prototype.step = function(){
+
+this.proportion += this.speed;
+
+if( this.proportion < 1 ){
+  this.x = this.ox + this.dx * this.proportion;
+  this.y = this.oy + this.dy * this.proportion;
+  this.z = this.oz + this.dz * this.proportion;
+  this.size = ( this.os + this.ds * this.proportion ) * opts.dataToConnectionSize;
+} else 
+  this.setConnection( this.nextConnection );
+
+this.screen.lastX = this.screen.x;
+this.screen.lastY = this.screen.y;
+this.setScreen();
+this.screen.color = opts.dataColor.replace( 'light', 40 + ( ( tick * this.glowSpeed ) % 50 ) ).replace( 'alp', .2 + ( 1 - this.screen.z / mostDistant ) * .6 );
+
+}
+Data.prototype.draw = function(){
+
+if( this.ended )
+  return --this.ended; // not sre why the thing lasts 2 frames, but it does
+
+ctx.beginPath();
+ctx.strokeStyle = this.screen.color;
+ctx.lineWidth = this.size * this.screen.scale;
+ctx.moveTo( this.screen.lastX, this.screen.lastY );
+ctx.lineTo( this.screen.x, this.screen.y );
+ctx.stroke();
+}
+Data.prototype.setConnection = function( connection ){
+
+if( connection.isEnd )
+  this.reset();
+
+else {
+  
+  this.connection = connection;
+  this.nextConnection = connection.links[ connection.links.length * Math.random() |0 ];
+  
+  this.ox = connection.x; // original coordinates
+  this.oy = connection.y;
+  this.oz = connection.z;
+  this.os = connection.size; // base size
+  
+  this.nx = this.nextConnection.x; // new
+  this.ny = this.nextConnection.y;
+  this.nz = this.nextConnection.z;
+  this.ns = this.nextConnection.size;
+  
+  this.dx = this.nx - this.ox; // delta
+  this.dy = this.ny - this.oy;
+  this.dz = this.nz - this.oz;
+  this.ds = this.ns - this.os;
+  
+  this.proportion = 0;
+}
+}
+Connection.prototype.setScreen = Data.prototype.setScreen = function(){
+
+var x = this.x,
+    y = this.y,
+    z = this.z;
+
+// apply rotation on X axis
+var Y = y;
+y = y * cosX - z * sinX;
+z = z * cosX + Y * sinX;
+
+// rot on Y
+var Z = z;
+z = z * cosY - x * sinY;
+x = x * cosY + Z * sinY;
+
+this.screen.z = z;
+
+// translate on Z
+z += opts.depth;
+
+this.screen.scale = opts.focalLength / z;
+this.screen.x = opts.vanishPoint.x + x * this.screen.scale;
+this.screen.y = opts.vanishPoint.y + y * this.screen.scale;
+
+}
+function squareDist( a, b ){
+
+var x = b.x - a.x,
+    y = b.y - a.y,
+    z = b.z - a.z;
+
+return x*x + y*y + z*z;
+}
+
+function anim(){
+
+window.requestAnimationFrame( anim );
+
+ctx.globalCompositeOperation = 'source-over';
+ctx.fillStyle = opts.repaintColor;
+ctx.fillRect( 0, 0, w, h );
+
+++tick;
+
+var rotX = tick * opts.rotVelX,
+    rotY = tick * opts.rotVelY;
+
+cosX = Math.cos( rotX );
+sinX = Math.sin( rotX );
+cosY = Math.cos( rotY );
+sinY = Math.sin( rotY );
+
+if( data.length < connections.length * opts.dataToConnections ){
+  var datum = new Data( connections[ 0 ] );
+  data.push( datum );
+  all.push( datum );
+}
+
+ctx.globalCompositeOperation = 'lighter';
+ctx.beginPath();
+ctx.lineWidth = opts.wireframeWidth;
+ctx.strokeStyle = opts.wireframeColor;
+all.map( function( item ){ item.step(); } );
+ctx.stroke();
+ctx.globalCompositeOperation = 'source-over';
+all.sort( function( a, b ){ return b.screen.z - a.screen.z } );
+all.map( function( item ){ item.draw(); } );
+
+/*ctx.beginPath();
+ctx.strokeStyle = 'red';
+ctx.arc( opts.vanishPoint.x, opts.vanishPoint.y, opts.range * opts.focalLength / opts.depth, 0, Tau );
+ctx.stroke();*/
+}
+
+window.addEventListener( 'resize', function(){
+
+opts.vanishPoint.x = ( w = c.width = window.innerWidth ) / 2;
+opts.vanishPoint.y = ( h = c.height = window.innerHeight ) / 2;
+ctx.fillRect( 0, 0, w, h );
+});
+window.addEventListener( 'click', init );
+</script>
+
+  
   <script src="{% static 'assets/vendor/jquery/jquery.min.js' %}"></script>
   <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
   <script src="{% static 'assets/vendor/jquery.easing/jquery.easing.min.js' %}"></script>

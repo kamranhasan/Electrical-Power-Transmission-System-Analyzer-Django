@@ -17,6 +17,8 @@ urlpatterns = [
     url(r'team$', views.team  , name='team'),
     url(r'packagedetail/(?P<id>\d+)$', views.packagedetail  , name='packagedetail'),
     url(r'nafilinux$', views.nafilinux  , name='nafilinux'),
+    url(r'auditservice$', views.auditservice  , name='auditservice'),
+   url(r'auditrevolution$', views.auditrevolution  , name='auditrevolution'),
 
 ]
 
