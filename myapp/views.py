@@ -3,8 +3,6 @@ from .models import *
 from .forms import Messages
 # Create your views here.
 def index(request):
-    service1 = Audit_Service.objects.all()
-    service2 = IS_Consultancy_Service.objects.all()
     service3 = IS_Security_Service.objects.all()
     service4 = Software_Solutions_Service.objects.all()
     product = Product.objects.all()[:4]
@@ -13,8 +11,6 @@ def index(request):
     contact = Messages()
     respond = 'Send Message'
     context = {
-        'service1' : service1,
-        'service2' : service2,
         'service3' : service3,
         'service4' : service4,
         'product' : product, 
@@ -35,11 +31,12 @@ def contacted(request):
         if data.is_valid():
             data.save()
             respond='Your Message has been sent successfully!'
-            return render(request,'index.html',{'respond':respond})
+            return render(request,'index.html',{'respond':respond,'product':product,'service':service,'team':team})
         else:
             data=Messages()
             respond='Your Message has been sent successfully!'
-            return render(request,'index.html',{'respond':respond})
+            return render(request,'index.html',{'respond':respond ,'product':product,'service':service,'team':team})
+    respond='Send Message'
     context = {
         'service' : service,
         'product' : product, 
@@ -190,17 +187,38 @@ def nafilinux(request):
 
 
 def auditservice(request):
+    service = Audit_Service.objects.all()
     contact = Messages()
     respond = 'Send Message'
-    return render(request, 'auditservice.html',{'contact' : contact,
-                                            'respond' : respond
-                                            }
-                )
+    return render(request, 'auditservice.html',{'service': service,'contact' : contact,'respond' : respond})
+
 
 def auditrevolution(request):
     contact = Messages()
     respond = 'Send Message'
-    return render(request, 'auditrevolution.html',{'contact' : contact,
-                                            'respond' : respond
-                                            }
-                )
+    return render(request, 'auditrevolution.html',{'contact' : contact,'respond' : respond})
+
+
+def consultingservice(request):
+    service = IS_Consultancy_Service.objects.all()
+    contact = Messages()
+    respond = 'Send Message'
+    return render(request, 'consultingservice.html',{'service': service,'contact' : contact,'respond' : respond, })
+
+
+def digitaltransformation(request):
+    contact = Messages()
+    respond = 'Send Message'
+    return render(request, 'digitaltransformation.html',{'contact' : contact,'respond' : respond})
+
+def riskservice(request):
+    service = IS_Security_Service.objects.all()
+    contact = Messages()
+    respond = 'Send Message'
+    return render(request, 'riskservice.html',{'service': service,'contact' : contact,'respond' : respond})
+
+def softwareservice(request):
+    service = Software_Solutions_Service.objects.all()
+    contact = Messages()
+    respond = 'Send Message'
+    return render(request, 'softwareservice.html',{'service': service,'contact' : contact,'respond' : respond})

@@ -6,5 +6,5 @@ from django.db import models
 class Messages(forms.ModelForm):
     class Meta:
         model = Contact
-        fields = ('First_Name', 'Last_Name','Business_Email', 'What_Are_You_Interested_In','How_Can_We_Help_You' )
+        fields = ('First_Name', 'Last_Name','Contact_Number','Business_Email', 'How_Can_We_Help_You' )
 

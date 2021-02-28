@@ -47,19 +47,19 @@
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li class="active"><a href="{% url 'index' %}">Home</a></li>
-          <li><a href="{% url 'index' %}#about" style='color:#5faee3'>About</a></li>
-          <li class='drop-down'><a href="{% url 'services' %}"style='color:#5faee3'>Services <i class='icon-double-angle-down'></i></a>
+          <li class="active"><a href="{% url 'index' %}" style='color:#5faee3;font-weight: bolder;'>Home</a></li>
+          <!-- <li><a href="{% url 'index' %}#about" style='color:#5faee3;font-weight: bolder;'>About</a></li> -->
+          <li class='drop-down'><a href="{% url 'services' %}"style='color:#5faee3;font-weight: bolder;'>Services <i class='icon-double-angle-down'></i></a>
             <ul>
-              <li><a href="{% url 'services' %}#audit">IS Audit & Governance</a></li>
-              <li><a href="{% url 'services' %}#security">IS Security</a></li>
-              <li><a href="{% url 'services' %}#consulting">IS Consulting</a></li>
-              <li><a href="{% url 'services' %}#solutions">Software Solutions</a></li>
+              <li><a href="{% url 'auditservice' %}">IS Audit & Governance</a></li>
+              <li><a href="{% url 'riskservice' %}">IS Security</a></li>
+              <li><a href="{% url 'consultingservice' %}">IS Consulting</a></li>
+              <li><a href="{% url 'softwareservice' %}">Software Solutions</a></li>
             </ul>
           </li>
-          <li><a href="{% url 'products' %}"style='color:#5faee3'>Products</a></li>
-          <li><a href="{% url 'team' %}"style='color:#5faee3'>Team</a></li>
-          <li class="drop-down"><a href=""style='color:#5faee3'>Nafi Linux Tools <i class='icon-double-angle-down'></i></a>
+          <li><a href="{% url 'products' %}"style='color:#5faee3;font-weight: bolder;'>Products</a></li>
+          <li><a href="{% url 'team' %}"style='color:#5faee3;font-weight: bolder;'>Team</a></li>
+          <li class="drop-down"><a href=""style='color:#5faee3;font-weight: bolder;'>Nafi Linux Tools <i class='icon-double-angle-down'></i></a>
             <ul>
               <li><a href="{% url 'nafilinux' %}#Information">Information Gathering</a></li>
               <!-- <li class="drop-down"><a href="#"></a>
@@ -160,7 +160,7 @@ canvas {
     </section><!-- End Clients Section -->
 
 
-    <section id="more-services" class="more-services">
+    <section id="more-services" class="more-services" style='background: #F3F4F7;'>
         <div class="container">
           <div class="section-title" data-aos="fade-up">
             <h2>Annaafi Products</h2>
@@ -186,7 +186,7 @@ canvas {
   
 
    <!-- ======= Contact Section ======= -->
-   <section id="contact" class="contact">
+   <section id="contact" class="contact" style='background: #white;'>
     <div class="container">
 
       <div class="section-title" data-aos="fade-up">
@@ -219,14 +219,14 @@ canvas {
 
             <div>
               <i class="icon-inbox"></i>
-              <p>Tariq Mahmood (CEO)<br/>tariq@annaafi.org</p>
+              <p>Tariq Mahmood (CEO)<br/>tariq@annaafi.org<br/>00965-66112545</p>
               <p>Mohammad Faisal (CTO)<br/>mohammad@annaafi.org</p>
    </div>
 
-            <div>
+            <!-- <div>
               <i class="icon-phone"></i>
               <p>Tariq Mahmood (CEO)<br/>00965-66112545</p>
-            </div>
+            </div> -->
 
           </div>
         </div>
@@ -262,8 +262,8 @@ canvas {
       </div>
       <div class="col-lg-6">
         <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
-          <a href="#intro" class="scrollto">Home</a>
-          <a href="#about" class="scrollto">About</a>
+          <a href="{% url 'index' %}" class="scrollto">Home</a>
+          <!-- <a href="#about" class="scrollto">About</a> -->
           <!-- <a href="#">Privacy Policy</a> -->
           <!-- <a href="#">Terms of Use</a> -->
         </nav>

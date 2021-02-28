@@ -1,4 +1,8 @@
 
+
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
@@ -181,7 +185,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-menu .drop-down > a:after {
-  /* content: "\ea99"; */
+  content: "\ea99";
   font-family: IcoFont;
   padding-left: 5px;
 }
@@ -202,7 +206,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-menu .drop-down .drop-down > a:after {
-  /* content: "\eaa0"; */
+  content: "\eaa0";
   font-family: IcoFont;
   position: absolute;
   right: 15px;
@@ -216,7 +220,7 @@ h1, h2, h3, h4, h5, h6 {
     left: -100%;
   }
   .nav-menu .drop-down .drop-down > a:after {
-    /* content: "\ea9d"; */
+    content: "\ea9d";
   }
 }
 
@@ -296,7 +300,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .mobile-nav .drop-down > a:after {
-  /* content: "\ea99"; */
+  content: "\ea99";
   font-family: IcoFont;
   padding-left: 10px;
   position: absolute;
@@ -304,7 +308,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .mobile-nav .active.drop-down > a:after {
-  /* content: "\eaa1"; */
+  content: "\eaa1";
 }
 
 .mobile-nav .drop-down > a {
@@ -749,7 +753,7 @@ section {
   margin-bottom: 0;
 }
 
-.services .icon-box:hover .tag .title a, .services .icon-box:hover .description {
+.services .icon-box:hover .title a, .services .icon-box:hover .description {
   color: #fff;
 }
 
@@ -1583,3 +1587,89 @@ section {
 #footer .footer-links a:hover {
   color: #3498db;
 }
+
+
+
+
+
+/*--------------------------------------------------------------
+# Frequently Asked Questions
+--------------------------------------------------------------*/
+.faq .faq-list {
+  padding: 0 100px;
+}
+
+.faq .faq-list ul {
+  padding: 0;
+  list-style: none;
+}
+
+.faq .faq-list li + li {
+  margin-top: 15px;
+}
+
+.faq .faq-list li {
+  padding: 20px;
+  background: #fff;
+  border-radius: 4px;
+  position: relative;
+}
+
+.faq .faq-list a {
+  display: block;
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  padding: 0 30px;
+  outline: none;
+}
+
+.faq .faq-list .icon-help {
+  font-size: 24px;
+  position: absolute;
+  right: 0;
+  left: 20px;
+  color: #47b2e4;
+}
+
+.faq .faq-list .icon-show, .faq .faq-list .icon-close {
+  font-size: 24px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.faq .faq-list p {
+  margin-bottom: 0;
+  padding: 10px 0 0 0;
+}
+
+.faq .faq-list .icon-show {
+  display: none;
+}
+
+.faq .faq-list a.collapsed {
+  color: #37517e;
+  transition: 0.3s;
+}
+
+.faq .faq-list a.collapsed:hover {
+  color: #47b2e4;
+}
+
+.faq .faq-list a.collapsed .icon-show {
+  display: inline-block;
+}
+
+.faq .faq-list a.collapsed .icon-close {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .faq .faq-list {
+    padding: 0;
+  }
+}
+

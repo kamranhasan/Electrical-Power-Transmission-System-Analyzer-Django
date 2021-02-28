@@ -52,6 +52,6 @@ admin_site.register(Software_Solutions_Service)
 
 
 urlpatterns = [
-    path('priadmin/', admin_site.urls),
+    path('priadmin/', admin.site.urls),
     path('', include("myapp.urls")),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

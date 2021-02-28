@@ -54,19 +54,19 @@
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li class="active"><a href="{% url 'index' %}">Home</a></li>
-          <li><a href="{% url 'index' %}#about" style='color:#5faee3'>About</a></li>
-          <li class='drop-down'><a href="{% url 'services' %}"style='color:#5faee3'>Services <i class='icon-double-angle-down'></i></a>
+          <li class="active"><a href="{% url 'index' %}" style='font-weight: bolder;'>Home</a></li>
+          <!-- <li><a href="{% url 'index' %}#about" style='color:#5faee3;font-weight: bolder;'>About</a></li> -->
+          <li class='drop-down'><a href="{% url 'services' %}"style='color:#5faee3;font-weight: bolder;'>Services <i class='icon-double-angle-down'></i></a>
             <ul>
-              <li><a href="{% url 'services' %}#audit">IS Audit & Governance</a></li>
-              <li><a href="{% url 'services' %}#security">IS Security</a></li>
-              <li><a href="{% url 'services' %}#consulting">IS Consulting</a></li>
-              <li><a href="{% url 'services' %}#solutions">Software Solutions</a></li>
+              <li><a href="{% url 'auditservice' %}">IS Audit & Governance</a></li>
+              <li><a href="{% url 'riskservice' %}">IS Security</a></li>
+              <li><a href="{% url 'consultingservice' %}">IS Consulting</a></li>
+              <li><a href="{% url 'softwareservice' %}">Software Solutions</a></li>
             </ul>
           </li>
-          <li><a href="{% url 'products' %}"style='color:#5faee3'>Products</a></li>
-          <li><a href="{% url 'team' %}"style='color:#5faee3'>Team</a></li>
-          <li class="drop-down"><a href=""style='color:#5faee3'>Nafi Linux Tools <i class='icon-double-angle-down'></i></a>
+          <li><a href="{% url 'products' %}"style='color:#5faee3;font-weight: bolder;'>Products</a></li>
+          <li><a href="{% url 'team' %}"style='color:#5faee3;font-weight: bolder;'>Team</a></li>
+          <li class="drop-down"><a href="{% url 'nafilinux' %}" style='color:#5faee3;font-weight: bolder;'>Nafi Linux Tools <i class='icon-double-angle-down'></i></a>
             <ul>
               <li><a href="{% url 'nafilinux' %}#Information">Information Gathering</a></li>
               <!-- <li class="drop-down"><a href="#"></a>
@@ -127,7 +127,7 @@ canvas {
         <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
           <h1 data-aos="fade-up" style='color:#5faee3;font-size:30px'>Let's make a Secure Digital Pakistan</h1> 
         
-          <h2 data-aos="fade-up" data-aos-delay="400">ANC aims to articulate and build differentiated and sustainable capabilities that support strategy execution and your ability to win in the market.</h2>
+          <h2 data-aos="fade-up" data-aos-delay="400" style='color:#CBCEE1'>ANC aims to articulate and build differentiated and sustainable capabilities that support strategy execution and your ability to win in the market.</h2>
           <div data-aos="fade-up" data-aos-delay="800">
             <a href="#services" class="btn-get-started scrollto">What We Offer!</a>
           </div>
@@ -259,7 +259,7 @@ canvas {
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
-          <h2>Explore ANC | Global Services</h2>
+          <h2>Explore ANC Global Services</h2>
           <p>We strive to make a difference in the World</p>
         </div>
 
@@ -273,7 +273,8 @@ canvas {
               <a >
                 <h4 class="title"><a href="{% url 'auditservice' %}" >IS Audit & Governance</a></h4></a>
               <p class="card-text">Helping you navigate regulatory complexity and strengthen trust and transparency.</p>
-           
+              <div class="read-more" style="margin:100px 0 0 0"><a href="{% url 'auditservice' %}"><i class="icofont-arrow-right" style='color:blue;border:3px solid white;padding:5px;border-radius: 5px;'>> Read More</i> </a></div>
+
               <!-- {% for service in service1 %}
               <p class="description"><a href="{% url 'audit' service.id %}" class='tag'>{{ service.name }}</a></p>
               {% endfor %} -->
@@ -283,9 +284,11 @@ canvas {
       
           <div id='security' class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-              <div class="icon"><i class="icon-dribbble"></i></div>
-              <h4 class="title"><a href="{% url 'auditservice' %}">Risk Assurance and Digital Forensics</a></h4>
+              <a href="{% url 'riskservice' %}"><div class="icon"><i class="icon-dribbble"></i></div></a>
+              <h4 class="title"><a href="{% url 'riskservice' %}">Risk Assurance and Digital Forensics</a></h4>
               <p class="card-text">With the proper risk management procedures in place, you can identify threats, avoid surprises and manage risk effectively.</p>
+              <div class="read-more" style="margin:60px 0 0 0"><a href="{% url 'riskservice' %}"><i class="icofont-arrow-right" style='color:blue;border:3px solid white;padding:5px;border-radius: 5px;'>> Read More</i> </a></div>
+
               <!-- {% for service in service2 %}
               <p class="description"><a href="{% url 'security' service.id %}" class='tag'>{{ service.name }}</a></p>
               {% endfor %} -->
@@ -294,9 +297,10 @@ canvas {
 
           <div id='consulting' class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-              <div class="icon"><i class="icon-dribbble"></i></div>
-              <h4 class="title"><a href="{% url 'auditservice' %}">IS Consultancy</a></h4>
+              <a href="{% url 'consultingservice' %}"> <div class="icon"><i class="icon-dribbble"></i></div></a>
+              <h4 class="title"><a href="{% url 'consultingservice' %}">IS Consultancy</a></h4>
               <p class="card-text">By taking time to understand your business and the issues and challenges you are facing, our Consulting teams use local and global knowledge to help you challenge conventions and introduce and deliver strategies that work specifically for you.</p>
+              <div class="read-more"><a href="{% url 'consultingservice' %}"><i class="icofont-arrow-right" style='color:blue;border:3px solid white;padding:5px;border-radius: 5px;'>> Read More</i> </a></div>
 
               <!-- {% for service in service3 %}
               <p class="description"><a href="{% url 'consulting' service.id %} class='tag'">{{ service.name }}</a></p>
@@ -306,10 +310,12 @@ canvas {
 
           <div id='solutions' class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-              <div class="icon"><i class="icon-dribbble"></i></div>
-              <h4 class="title"><a href="{% url 'auditservice' %}">Software Solutions</a></h4>
+            <a href="{% url 'softwareservice' %}">  <div class="icon"><i class="icon-dribbble"></i></div></a>
+              <h4 class="title"><a href="{% url 'softwareservice' %}">Software Solutions and Data Analytics</a></h4>
               <p class="card-text">Optimize your data assets. Use data analytics and our sofware solutions to make faster and better decisions. Work more efficiently and save money.
               </p>
+              <div class="read-more" style="margin:50px 0 0 0"><a href="{% url 'softwareservice' %}"><i class="icofont-arrow-right" style='color:blue;border:3px solid white;padding:5px;border-radius: 5px;'>> Read More</i> </a></div>
+
             </div>
           </div>
 
@@ -838,15 +844,15 @@ canvas {
 
               <div>
                 <i class="icon-inbox"></i>
-                <p>Tariq Mahmood (CEO)<br/>tariq@annaafi.org</p>
+                <p>Tariq Mahmood (CEO)<br/>tariq@annaafi.org<br/>00965-66112545</p>
                 <p>Mohammad Faisal (CTO)<br/>mohammad@annaafi.org</p>
 
               </div>
 
-              <div>
+              <!-- <div>
                 <i class="icon-phone"></i>
                 <p>Tariq Mahmood (CEO)<br/>00965-66112545</p>
-              </div>
+              </div> -->
 
             </div>
           </div>
@@ -882,8 +888,8 @@ canvas {
         </div>
         <div class="col-lg-6">
           <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
-            <a href="#intro" class="scrollto">Home</a>
-            <a href="#about" class="scrollto">About</a>
+            <a href="{% url 'index' %}" class="scrollto">Home</a>
+            <!-- <a href="#about" class="scrollto">About</a> -->
             <!-- <a href="#">Privacy Policy</a> -->
             <!-- <a href="#">Terms of Use</a> -->
           </nav>

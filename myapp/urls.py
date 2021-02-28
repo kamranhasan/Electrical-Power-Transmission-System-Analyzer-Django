@@ -18,7 +18,12 @@ urlpatterns = [
     url(r'packagedetail/(?P<id>\d+)$', views.packagedetail  , name='packagedetail'),
     url(r'nafilinux$', views.nafilinux  , name='nafilinux'),
     url(r'auditservice$', views.auditservice  , name='auditservice'),
-   url(r'auditrevolution$', views.auditrevolution  , name='auditrevolution'),
+    url(r'auditrevolution$', views.auditrevolution  , name='auditrevolution'),
+    url(r'consultingservice$', views.consultingservice  , name='consultingservice'),
+    url(r'digitaltransformation$', views.digitaltransformation  , name='digitaltransformation'),
+    url(r'riskservice$', views.riskservice  , name='riskservice'),
+    url(r'softwareservice$', views.softwareservice  , name='softwareservice'),
+    
 
 ]
 
