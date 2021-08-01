@@ -101,9 +101,9 @@ code {
           <!-- <li><a href="{% url 'index' %}#about">About</a></li> -->
           <li class='drop-down'><a href="{% url 'services' %}">Services <i class='icon-double-angle-down'></i></a>
             <ul>
-              <li><a href="{% url 'auditservice' %}">IS Audit & Governance</a></li>
-              <li><a href="{% url 'riskservice' %}">IS Security</a></li>
-              <li><a href="{% url 'consultingservice' %}">IS Consulting</a></li>
+              <li><a href="{% url 'auditservice' %}">Security Audit & Assurance</a></li>
+              <li><a href="{% url 'riskservice' %}">Risk Assurance & Digital Forensics</a></li>
+              <li><a href="{% url 'consultingservice' %}">Emerging Technologies Consulting</a></li>
               <li><a href="{% url 'softwareservice' %}">Software Solutions</a></li>
             </ul></li>
          <li><a href="{% url 'products' %}">Products</a></li>
@@ -195,10 +195,10 @@ code {
             
           </div>
         
-          <p>
-            <h2><br/>{{ package.tool_name }} Usage Example</h2>             </p>
-       </div>
-
+        </div>
+        <p>
+          <h2><br/>{{ package.tool_name }} Usage Example</h2>             </p>
+     
        <div ng-app="MyApp" ng-controller="AppCtrl">
        
          <!-- JS Box -->

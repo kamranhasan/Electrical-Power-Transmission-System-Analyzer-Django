@@ -1,10 +1,9 @@
 from django import forms
-from .models import Contact
+from .models import *
 from django.db import models
 
-
-class Messages(forms.ModelForm):
+class TubularTower(forms.ModelForm):
     class Meta:
-        model = Contact
-        fields = ('First_Name', 'Last_Name','Contact_Number','Business_Email', 'How_Can_We_Help_You' )
+        model = Tower
+        fields = ('tower_height', 'frequency','temperature_effect','spacing_between_conductors', 'conductor_type','conductor_length','conductor_crosssectional_area','cable_configuration','power_transmitted_in_MVA','sending_end_voltage_in_KV' )
 

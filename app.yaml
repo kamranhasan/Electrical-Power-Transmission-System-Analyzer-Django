@@ -8,8 +8,12 @@ handlers:
 - url: /.*
   script: auto
   secure: always
+  redirect_http_response_code: 301
   
-
+env_variables:
+  DJANGO_SETTINGS_MODULE: "website.settings"
+  EMAIL_HOST_USER: 'annaaficonsulting@gmail.com'
+  EMAIL_HOST_PASSWORD: 'wazaa908@@'
 # libraries:
 # - name: django_otp
 #   version: "1.0.2"

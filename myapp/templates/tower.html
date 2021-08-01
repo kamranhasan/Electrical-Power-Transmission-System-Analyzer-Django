@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>EPT CEP</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        {% load static %}
+        {% load humanize %}
+        {% load mathfilters %}
+
+        <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    
+        <link rel="stylesheet" href="{% static 'css/open-iconic-bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+        
+        <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    
+        <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+    
+        <link rel="stylesheet" href="{% static 'css/ionicons.min.css' %}">
+        
+        <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+        <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+      </head>
+      <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+        <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light site-navbar-target" id="ftco-navbar">
+          <div class="container">
+            <a class="navbar-brand" href="{% url 'index' %}" style="color: turquoise;font-style: italic;">EPT CEP</a>
+            <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="oi oi-menu"></span> Menu
+            </button>
+    
+            <div class="collapse navbar-collapse" id="ftco-nav">
+              <ul class="navbar-nav nav ml-auto">
+                <li class="nav-item"><a href="{% url 'index' %}#home-section" class="nav-link"><span>Home</span></a></li>
+                <li class="nav-item"><a href="{% url 'index' %}#services-section" class="nav-link"><span>Made by </span></a></li>
+                <li class="nav-item"><a href="{% url 'index' %}#about-section" class="nav-link"><span>Kamran Hasan</span></a></li>
+                <li class="nav-item"><a href="{% url 'index' %}#destination-section" class="nav-link"><span>Sarosh Hashmi</span></a></li>
+                <li class="nav-item"><a href="{% url 'index' %}#hotel-section" class="nav-link"><span>Syed Huraira Sajid</span></a></li>
+                <!-- <li class="nav-item"><a href="#restaurant-section" class="nav-link"><span>Restaurant</span></a></li> -->
+                <!-- <li class="nav-item"><a href="#blog-section" class="nav-link"><span>Blog</span></a></li> -->
+                <li class="nav-item"><a href="{% url 'index' %}#contact-section" class="nav-link"><span>Contact</span></a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+          
+	  <section class="hero-wrap" style="background-image: url('{{ product.picture }}');background-size:100% 100%; background-repeat: no-repeat;" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-start">
+          <div class="col-md-9 ftco-animate pb-4">
+            <h1 class="mb-3 bread" style="color:whitesmoke;font-weight: bolder;background-color: turquoise;padding: 5px;border-radius: 20px;">Let's Analyze Transmission Systems ...</h1>
+            <p><a href="#booked" class="btn btn-primary py-2 px-4">Run Analysis</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ftco-section ftco-services-2 ftco-no-pt">
+      {% block content %}
+    	<div class="container-fluid px-0 bg-light">
+    		<div class="container">
+    			<div class="row tour py-5">
+        	
+        </div>
+    		</div>
+    	</div>
+      <div class="container">
+        <div class="row">
+        	<div class="col-md-12 tour-wrap mb-5">
+    				<div class="row">
+    					<div class="col-md-6 d-flex ftco-animate">
+    						<div class="img align-self-stretch" style="background-image: url({{ product.picture }});background-size:100% 100%; background-repeat: no-repeat;" ></div>
+    					</div>
+    					<div class="col-md-6 ftco-animate">
+    						<div class="text py-5">
+    							<h3><a href="#">{{ product.name }}</a></h3>
+    							<!-- <p class="pos">from {{ package.price }} for {{ package.days }}</p> -->
+    							<p>{{ product.complete_description }}</p>
+    							<p><a href="#details" class="btn btn-secondary">Details</a> </p>
+    						</div>
+    					</div>
+    				</div>
+    			</div>
+    			
+    			<div class="col-md-12 tour-wrap">
+    				<table class="table" id='details'>
+					    <tbody>
+                <h2 style="color: turquoise;font-style: italic;">Electrical Parameters</h2>
+					      <tr>
+				      	  <th scope="row">Line Resistance:</th>
+					        <td>
+					        	<p><b>{{ product.resistance|floatformat:5 }} Ohms</b> at <b>29 degree</b> temperature</p>
+					        </td>
+					        <td></td>
+					      </tr><!-- END TR-->
+                <tr>
+                  <th scope="row">Inductance Of <br>Transmission Lines</th>
+                  <td>
+                    <p><b>{{ product.inductance_of_transmission_lines|mul:1000|mul:1000|floatformat:4 }} mH/km</b></p>
+                  </td>
+                  <td></td>
+                </tr><!-- END TR-->
+
+              <tr>
+                <th scope="row">Capacitance</th>
+                <td class="d-flex">
+                   <b> {{ product.capacitance|mul:100000000000000|floatformat:2 }} pF/Km</b>
+                </td>
+                <td></td>
+              </tr><!-- END TR-->
+                <tr>
+                    <th scope="row">Skin Depth</th>
+                    <td>
+                      <p><b>{{ product.skin_depth|floatformat:5 }} m</b></p>
+                    </td>
+                    <td></td>
+                  </tr><!-- END TR-->
+                <tr>
+				      	  <th scope="row">Temperature effect</th>
+					        <td>
+					        	<p>Resistance increases to <b>{{ temp_resistance|floatformat:5 }} Ohm</b> at <b>{{ product.temperature_effect }}</b> degree temperature</p>
+					        </td>
+					        <td></td>
+					      </tr><!-- END TR-->
+
+					      <tr>
+				      	  <th scope="row">Current Carrying <br>Capacity</th>
+					        <td>
+					        	<p><b>{{ product.current_carrying_capacity }} Ampere</b> at <b>{{ product.cable_configuration }} cable configuration</b></p>
+					        </td>
+					        <td></td>
+					      </tr><!-- END TR-->
+               
+					      <tr>
+				      	  <th scope="row">Capacitive Reactance</th>
+					        <td class="d-flex">
+					        	<b>  {{ product.capacitive_reactance|floatformat:2 }} Ohm/Km</b>
+					        </td>
+					        <td></td>
+					      </tr>
+                <tr>
+                  <th scope="row">Frequency</th>
+                  <td class="d-flex">
+                     <b> {{ product.frequency }} Hz</b>
+                  </td>
+                  <td></td>
+                </tr><!-- END TR-->
+					    </tbody>
+					  </table>
+    			</div>
+          
+
+                <div class="col-md-12 tour-wrap">
+                  <table class="table" id='details'>
+                    <tbody>
+                      <h2 style="color: turquoise;font-style: italic;">Geometric Parameters</h2>
+                      <tr>
+				      	  <th scope="row">Conductor Type</th>
+					        <td class="d-flex">
+					        	  <b>{{ product.conductor_type }}</b>
+					        </td>
+					        <td></td>
+					      </tr>
+                <tr>
+				      	  <th scope="row">Conductor Length</th>
+					        <td class="d-flex">
+					        	  <b>{{ product.conductor_length }} m</b>
+					        </td>
+					        <td></td>
+					      </tr>
+                <tr>
+				      	  <th scope="row">Tower Height</th>
+					        <td class="d-flex">
+					        	  <b>{{ product.tower_height }} m</b>
+					        </td>
+					        <td></td>
+					      </tr>
+                <tr>
+				      	  <th scope="row">Conductor Cross-sectional <br>Area</th>
+					        <td class="d-flex">
+					        	 <b> {{ product.conductor_crosssectional_area }} m<sup>2</sup></b>
+					        </td>
+					        <td></td>
+					      </tr>
+                <tr>
+                
+				      	  <th scope="row">Spacing Between <br>Bundled Conductors</th>
+					        <td>
+					        	<p><b>{{ product.spacing_between_bundled_conductors }}</b></p>
+					        </td>
+					        <td></td>
+					      </tr><!-- END TR-->
+                <tr>
+                
+				      	  <th scope="row">Spacing Between <br>Conductors</th>
+					        <td>
+					        	<p><b>{{ product.spacing_between_conductors }} m</b></p>
+					        </td>
+					        <td></td>
+					      </tr><!-- END TR-->
+                
+                <tr>
+				      	  <th scope="row">Span <br>(Distance b/t two towers)</th>
+					        <td class="d-flex">
+					        	  <b>{{ product.span }} m</b>
+					        </td>
+					        <td></td>
+					      </tr>
+                <tr>
+				      	  <th scope="row">Commulative Line Loading <br>(Wind Pressure/Transverse/<br>Longitudinal/Vertical/Ice Loads)</th>
+					        <td class="d-flex">
+					        	<b>  {{ product.commulative_line_loading }}</b>
+					        </td>
+					        <td></td>
+					      </tr>
+                <tr>
+				      	  <th scope="row">Corona Losses</th>
+					        <td class="d-flex">
+					        	<b>  {{ product.corona_losses|floatformat:2 }} kW/km/phase</b>
+					        </td>
+					        <td></td>
+					      </tr>
+                
+					    </tbody>
+					  </table>
+    			</div>
+          
+              <!-- END comment-list -->
+              
+              
+            </div>
+    			</div>
+        </div>
+
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Alice:300,400,600,700&&display=swap');
+
+/*Required CSS*/
+svg.radial-progress{height:auto;max-width:240px;padding:0;transform:rotate(-90deg);width:100%;background-image:linear-gradient(-225deg,#FF057C 0%,#8D0B93 50%,#321575 100%);border-radius:50%;}
+section.svg-container svg.radial-progress:nth-child(even) {margin: 0 15px;}
+svg.radial-progress circle{fill:transparent;stroke:#fff;}
+svg.radial-progress circle.bar-static{stroke:#fafafa!important;}
+svg.radial-progress circle.bar--animated{stroke-dasharray:219.91148575129;stroke:#ffffff;stroke-dashoffset:219.91148575129;stroke-width:4px;stroke-linecap:round;}
+svg.radial-progress text{fill:#fafafa;font-family:Roboto;font-size:16px;font-weight:700;text-anchor:middle;text-shadow:0 0 5px #0000007a;}
+
+/*For CodePen*/
+#bar{margin:0;min-height:100vh;flex-wrap:wrap;font-family:'Alice',serif;height:100vh;display:flex;align-items:center;justify-content:center;background-color:#ffffff; 
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='0' x2='0' y1='1' y2='0' gradientTransform='rotate(0,0.5,0.5)'%3E%3Cstop offset='0' stop-color='%23ff057c'/%3E%3Cstop offset='1' stop-color='%23321575'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' x1='0' x2='0' y1='0' y2='1'%3E%3Cstop offset='0' stop-color='%23F00'/%3E%3Cstop offset='1' stop-color='%23FC0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='%23FFF' fill-opacity='0' stroke-miterlimit='10'%3E%3Cg stroke='url(%23a)' stroke-width='7.26'%3E%3Cpath d='M1409 581 1450.35 511 1490 581z'/%3E%3Ccircle stroke-width='2.4200000000000004' transform='' cx='500' cy='100' r='40'/%3E%3Cpath transform='' d='M400.86 735.5h-83.73c0-23.12 18.74-41.87 41.87-41.87S400.86 712.38 400.86 735.5z'/%3E%3C/g%3E%3Cg stroke='url(%23b)' stroke-width='2.2'%3E%3Cpath transform='' d='M149.8 345.2 118.4 389.8 149.8 434.4 181.2 389.8z'/%3E%3Crect stroke-width='4.840000000000001' transform='' x='1039' y='709' width='100' height='100'/%3E%3Cpath transform='' d='M1426.8 132.4 1405.7 168.8 1363.7 168.8 1342.7 132.4 1363.7 96 1405.7 96z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");background-position: bottom;background-size:cover;}
+section.svg-container{width:52%;max-width:100%;display:flex;align-items:center;justify-content:space-evenly;min-height:80vh;}
+.devider{font-size:50px;padding:20px;min-height:11vh;color:#fff;width:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(-225deg,#FF057C 0%,#FF057C 40%,#321575 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:600;}
+.devider:nth-last-of-type(2){background-image:linear-gradient(260deg,#ff0300,#ffc900);linear-gradient(-225deg,#ff0300 0%,#ffc900 100%)}
+section.svg-container:nth-last-of-type(1) svg.radial-progress{background:linear-gradient(260deg,#ff0300,#ffc900);}
+section.svg-container:nth-last-of-type(0) svg.radial-progress{background-image:linear-gradient(60deg,#3d3393 0%,#2b76b9 37%,#2cacd1 65%,#35eb93 100%);}
+</style><div id='bar'>
+        <section class="devider">Efficiency of System </section>
+        <section class="svg-container" style="margin: 0 auto 0 auto;">
+              <svg class="radial-progress" data-countervalue="{{ product.efficiency|sub:1 }}" viewBox="0 0 80 80">
+                  <circle class="bar-static" cx="40" cy="40" r="35"></circle>
+                  <circle class="bar--animated" cx="40" cy="40" r="35" style="stroke-dashoffset: 217.8;"></circle>
+                  <text class="countervalue start" x="50%" y="57%" transform="matrix(0, 1, -1, 0, 80, 0)">{{ product.efficiency|sub:1 }}</text>
+              <div>
+                  <h4 style="color:turquoise;background-color:blue;padding:10px;border-radius:20px;font-weight:bolder">Recommendation:</h4>
+           {% if product.efficiency > 90 %}
+                  <p style='color:black'> > The system is efficient</p>
+            {% else %}
+            <p style='color:black'> > The system is not efficient</p>
+                  {% endif %}
+                </div>  
+          </svg>
+            
+          </section>
+          <section class="devider">Voltage Regulation</section>
+          <section class="svg-container" style="margin: 0 auto 0 auto;">
+              <svg class="radial-progress" data-countervalue="{{ product.voltage_regulation }}" viewBox="0 0 80 80">
+                  <circle class="bar-static" cx="40" cy="40" r="35"></circle>
+                  <circle class="bar--animated" cx="40" cy="40" r="35" style="stroke-dashoffset: 217.8;"></circle>
+                  <text class="countervalue start" x="50%" y="57%" transform="matrix(0, 1, -1, 0, 80, 0)">{{ product.voltage_regulation }}</text>
+                  <div>
+                  <h4 style="color:turquoise;background-color:blue;padding:10px;border-radius:20px;font-weight:bolder">Recommendation:</h4>
+                  {% if product.voltage_regulation > 5 %}
+                         <p style='color:black'> > Voltage Regulation needs to be improved</p>
+                   {% else %}
+                   <p style='color:black'> > Voltage Regulation does not needs to be improved</p>
+                         {% endif %}
+                        </div>
+                </svg>
+            </section>
+            
+        </div>
+       <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> 
+       <div id='recommendation' class="comment-form-wrap pt-5">
+        <h3 align='center' class="mb-5 btn-primary">Recommendations</h3>
+      
+      </div>
+      
+       <!-- ======= Frequently Asked Questions Section ======= -->
+   <section id="faq" class="faq section-bg">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2 align='center'>Want to know how can you optimized this system?</h2>
+      </div>
+
+      <div class="faq-list"align='center'>
+        <!-- <ul> -->
+          <li data-aos="fade-up" data-aos-delay="200">
+            <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-2" class="collapsed">Effect of Frequency <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+            <div id="faq-list-2" class="collapse" data-parent=".faq-list">
+              <p>Corona power loss happens due to the high electric field around the conductor surface. Therefore higher the potential difference between the conductor, the higher the electric field, and the higher power loss due to corona. The line voltage greatly affects the corona. If it is low, there is no charge in the air surrounding the conductors and hence no corona is formed. However, if the line voltage has such a value that electrostatic stress developed at the conductor surface make the air around the conductor conducting then corona is formed.</p>
+            
+            </p>
+            </div>
+          </li>
+          <li data-aos="fade-up" data-aos-delay="200">
+            <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-2" class="collapsed">Effect of conductivity of  Air<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+            <div id="faq-list-2" class="collapse" data-parent=".faq-list">
+              <p>Higher the conductivity of airs means more numbers of the ions around the conductor surface. Hence higher power losses due to corona. Due to this reason in the rainy season atmosphere become more conducting and the result of this corona loss increases. So keep in mind the worst case scenario in regard to the atmosphere.</p>
+            
+            </p>
+            </div>
+          </li>
+          <li data-aos="fade-up" data-aos-delay="200">
+            <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-2" class="collapsed">Effect of conductor radius<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+            <div id="faq-list-2" class="collapse" data-parent=".faq-list">
+              <p>With an increase in conductor radius field intensity decrease near-surface area thus power loss decreases. </p>
+            
+            </p>
+            </div>
+          </li>
+          <li data-aos="fade-up" data-aos-delay="200">
+            <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-2" class="collapsed">Improve Voltage Regulation<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+            <div id="faq-list-2" class="collapse" data-parent=".faq-list">
+              <p>You can add series capacitors to your transmission line with each phase at some distance of your line. The capacitive reactance  Xc  will remove part of the inductive reactance  Xl  and hence the total impedance  Z  will decrease. And when  Z  decreases that means your voltage will rise because the voltage drop now is small.</p>
+            
+            </p>
+            </div>
+          </li>
+         <!-- </ul> -->
+      </div>
+
+    </div>
+  </section><!-- End Frequently Asked Questions Section -->
+
+
+
+
+       <div id='booked' class="comment-form-wrap pt-5">
+          <h3 align='center' class="mb-5 btn-primary">Run Your Own Analysis</h3>
+          <form class="form-contact contact_form" action="{% url 'tubular' product.id %}" method="POST" >
+            {% csrf_token %}
+            <div class="row">
+              <div class="container col-20">
+              <div align='center' class="form-group">
+                {% block bookingsform %}
+                {% load crispy_forms_tags %}
+                {{ form|crispy}}
+              <button type="submit" class="btn draw-border btn-primary">Run Analysis</button>
+            <!-- <h3>{{ accountDetails.3 }}</h3>
+            <p>{{ accountDetails2.3 }}</p>
+            <h3>{{ accountDetails.2 }}</h3>
+            <p>{{ accountDetails2.2 }}</p>
+            <h3>{{ accountDetails.1 }}</h3>
+            <p>{{ accountDetails2.1 }}</p>
+            <h3>{{ accountDetails.0 }}</h3>
+            <p>{{ accountDetails2.0 }}</p> -->
+            </div>
+            
+            {% endblock bookingsform %}
+
+
+       </form>
+        </div>
+
+
+      </div>
+      {% endblock content %}
+    </section> <!-- .section -->
+		
+    <footer class="ftco-footer ftco-section">
+        <div class="container">
+          <div class="row mb-5">
+            <div class="col-md">
+              <div class="ftco-footer-widget mb-4">
+                <h2 class="ftco-heading-2">About <span><a href="{% url 'index' %}">EPT CEP</a></span></h2>
+                <p>This CEP is a Electrical Transmission Systems Analyzer that aims to help Engineers and Common users in designing optimal transmission lines and towers.</p>
+                <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                  <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                  <li class="ftco-animate"><a href="https://facebook.com/NomadsAdventureServices/?ref=br_rs"><span class="icon-facebook"></span></a></li>
+                  <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md">
+              <div class="ftco-footer-widget mb-4 ml-md-4">
+                <h2 class="ftco-heading-2">Information</h2>
+                <ul class="list-unstyled">
+                  <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>How it Works?</a></li>
+                  <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Report Issues</a></li>
+                  <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Call Us</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md">
+               <div class="ftco-footer-widget mb-4">
+                <h2 class="ftco-heading-2">Show Your Support</h2>
+                <ul class="list-unstyled">
+                  <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>To Support this project, please send your capital to</a></li>
+                  <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>IBAN: PKBAHL3383882929298</a></li>
+                  <!-- <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Nature</a></li>
+                  <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Camping</a></li>
+                  <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Party</a></li> -->
+                </ul>
+              </div>
+            </div>
+            <div class="col-md">
+              <div class="ftco-footer-widget mb-4">
+                <h2 class="ftco-heading-2">Have a Question?</h2>
+                <div class="block-23 mb-3">
+                  <ul>
+                    <li><span class="icon icon-map-marker"></span><span class="text">NED University, Karachi.</span></li>
+                    <li><a href="#"><span class="icon icon-phone"></span><span class="text">03322394636</span></a></li>
+                    <li><a href="#"><span class="icon icon-envelope"></span><span class="text"> hasan4101962@cloud.neduet.edu.pk</span></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 text-center">
+    
+              <p>
+    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved |<a href="#" target="_blank"> EPT Group</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+      
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+    <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/aos.js' %}"></script>
+    <script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
+    <script src="{% static 'js/scrollax.min.js' %}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+    <script src="{% static 'js/google-map.js' %}"></script>
+    
+    <script src="{% static 'js/main.js' %}"></script>
+    <script>
+      function radial_animate() { 
+              $('svg.radial-progress').each(function( index, value ) { 
+    
+                  $(this).find($('circle.bar--animated')).removeAttr( 'style' );    
+                  // Get element in Veiw port
+                  var elementTop = $(this).offset().top;
+                  var elementBottom = elementTop + $(this).outerHeight();
+                  var viewportTop = $(window).scrollTop();
+                  var viewportBottom = viewportTop + $(window).height();
+                  
+                  if(elementBottom > viewportTop && elementTop < viewportBottom) {
+                      var percent = $(value).data('countervalue');
+                      var radius = $(this).find($('circle.bar--animated')).attr('r');
+                      var circumference = 2 * Math.PI * radius;
+                      var strokeDashOffset = circumference - ((percent * circumference) / 100);
+                      $(this).find($('circle.bar--animated')).animate({'stroke-dashoffset': strokeDashOffset}, 2800);
+                  }
+              });
+          }
+    // To check If it is in Viewport 
+          var $window = $(window);
+          function check_if_in_view() {    
+              $('.countervalue').each(function(){
+                  if ($(this).hasClass('start')){
+                      var elementTop = $(this).offset().top;
+                      var elementBottom = elementTop + $(this).outerHeight();
+    
+                      var viewportTop = $(window).scrollTop();
+                      var viewportBottom = viewportTop + $(window).height();
+    
+                      if (elementBottom > viewportTop && elementTop < viewportBottom) {
+                                $(this).removeClass('start');
+                                $('.countervalue').text();
+                                var myNumbers = $(this).text();
+                                if (myNumbers == Math.floor(myNumbers)) {
+                                    $(this).animate({
+                                        Counter: $(this).text()
+                                    }, {
+                                        duration: 2800,
+                                        easing: 'swing',
+                                        step: function(now) {
+                                            $(this).text(Math.ceil(now)  + '%');                                
+                                        }
+                                    });
+                                } else {
+                                    $(this).animate({
+                                        Counter: $(this).text()
+                                    }, {
+                                        duration: 2800,
+                                        easing: 'swing',
+                                        step: function(now) {                                
+                                            $(this).text(now.toFixed(2)  + '$'); 
+                                        }
+                                    });
+                                }
+    
+                                radial_animate();
+                            }
+                  }
+              });
+          }
+    
+          $window.on('scroll', check_if_in_view);
+          $window.on('load', check_if_in_view);
+    
+    </script>
+     
+    </body>
+  </html>

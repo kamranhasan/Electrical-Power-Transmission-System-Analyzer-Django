@@ -1,224 +1,91 @@
 from django.shortcuts import render
 from .models import *
-from .forms import Messages
+from .forms import *
+from django.core.mail import send_mail
+from django.conf import settings
 # Create your views here.
 def index(request):
-    service3 = IS_Security_Service.objects.all()
-    service4 = Software_Solutions_Service.objects.all()
-    product = Product.objects.all()[:4]
-    testimonial = Testimonial.objects.all()
-    team = Team.objects.all().order_by('id')[:3]
-    contact = Messages()
-    respond = 'Send Message'
-    context = {
-        'service3' : service3,
-        'service4' : service4,
-        'product' : product, 
-        'testimonial' : testimonial,
-        'team' : team,
-        'contact' : contact,
-        'respond' : respond
-        }
-    return render(request, 'index.html', context)
+    towers = Tower.objects.all()
+    # service4 = Software_Solutions_Service.objects.all()
+    # product = Product.objects.all()[:4]
+    # testimonial = Testimonial.objects.all()
+    # team = Team.objects.all().order_by('id')[:3]
+    # contact = Messages()
+    # respond = 'Send Message'
+    # context = {
+    #     'service3' : service3,
+    #     'service4' : service4,
+    #     'product' : product, 
+    #     'testimonial' : testimonial,
+    #     'team' : team,
+    #     'contact' : contact,
+    #     'respond' : respond
+    #     }
+    return render(request, 'index.html', context={'towers':towers})
+import math 
+def tower(request,id):
+    tower = Tower.objects.get(id=id)
+    if tower.conductor_type == 'Aluminum Conductor Steel Reinforced (ACSR)':
+        print('yes')
+        resistivity = 0.0000000265
+        tower.resistance = (resistivity * float(tower.conductor_length))/float(tower.conductor_crosssectional_area)
+        skin_depth = math.sqrt(resistivity/(3.134*int(tower.frequency)*(0.00000125)))
+        diameter = 2*(math.sqrt(float(tower.conductor_crosssectional_area)/3.124))
+        tower.resistance = (resistivity * float(tower.conductor_length))/(3.124*(diameter)*(skin_depth))
+        tower.skin_depth = skin_depth
+        temp_resistance = tower.resistance*((235+float(tower.temperature_effect))/(235+29))
+        if tower.cable_configuration == 'horizontal':
+            tower.current_carrying_capacity = '430'
+        if tower.cable_configuration == 'vertical':
+            tower.current_carrying_capacity = '389'
+        # print(diameter)
+        tower.spacing_between_bundled_conductors = 'Not Applicable'
+        tower.inductance_of_transmission_lines = (0.00000125/2*3.142)*(0.25 + math.log(float(tower.spacing_between_conductors)/(diameter/2)))
+        tower.capacitance = (0.0000000000555)/math.log((float(tower.spacing_between_conductors))/(diameter/2))
+        tower.capacitive_reactance = (6600000/float(tower.frequency))*(math.log(float(tower.spacing_between_conductors)/float(diameter/2)))
+        tower.efficiency = int((float(tower.power_received_at_load_in_MVA)/float(tower.power_transmitted_in_MVA))*100)
+        tower.voltage_regulation = int(((float(tower.sending_end_voltage_in_KV)- float(tower.receiving_end_voltage_in_KV))/float(tower.receiving_end_voltage_in_KV))*100)
+        print(tower.voltage_regulation)
+        disruptive_voltage = 0.0374*math.log((float(tower.spacing_between_conductors))/float(diameter/2))
+        tower.corona_losses = (0.0000244/1.225)*(float(tower.frequency) +25)*math.sqrt((diameter/2)/(float(tower.spacing_between_conductors)*1000))*math.pow((((float(tower.sending_end_voltage_in_KV)/math.sqrt(3))*1000)-disruptive_voltage),1)
+        tower.power_received_at_load_in_MVA = float(tower.power_transmitted_in_MVA) - float(tower.corona_losses)/1000
+        print(tower.power_received_at_load_in_MVA)
+        form = TubularTower()
+    return render(request, 'tower.html', context={'product':tower,'temp_resistance':temp_resistance,'form': form})
 
-def contacted(request):
-    service = Service.objects.all()
-    product = Product.objects.all()
-    testimonial = Testimonial.objects.all()
-    team = Team.objects.all()[:4]
-    if request.method=="POST":
-        data=Messages(request.POST)
-        if data.is_valid():
-            data.save()
-            respond='Your Message has been sent successfully!'
-            return render(request,'index.html',{'respond':respond,'product':product,'service':service,'team':team})
-        else:
-            data=Messages()
-            respond='Your Message has been sent successfully!'
-            return render(request,'index.html',{'respond':respond ,'product':product,'service':service,'team':team})
-    respond='Send Message'
-    context = {
-        'service' : service,
-        'product' : product, 
-        'testimonial' : testimonial,
-        'team' : team,
-        'respond' : respond
-        }
-    return render(request, 'index.html', context)
-
-
-def productDetail(request,id):
-    product=Product.objects.get(id=id)
-    contact = Messages()
-    respond = 'Send Message'
-    return render(request, 'productdetail.html',{'product': product,
-                                                'contact' : contact,
-                                                'respond' : respond
-                                                }
-                )
-
-
-def auditDetail(request,id):
-    service=Audit_Service.objects.get(id=id)
-    contact = Messages()
-    respond = 'Send Message'
-    return render(request, 'servicedetail.html',{'service': service,
-                                                'contact' : contact,
-                                                'respond' : respond
-                                                }
-                )
-
-def consultingDetail(request,id):
-    service=IS_Consultancy_Service.objects.get(id=id)
-    contact = Messages()
-    respond = 'Send Message'
-    return render(request, 'servicedetail.html',{'service': service,
-                                                'contact' : contact,
-                                                'respond' : respond
-                                                }
-                )
-
-
-def securityDetail(request,id):
-    service=IS_Security_Service.objects.get(id=id)
-    contact = Messages()
-    respond = 'Send Message'
-    return render(request, 'servicedetail.html',{'service': service,
-                                                'contact' : contact,
-                                                'respond' : respond
-                                                }
-                )
-
-
-def solutionDetail(request,id):
-    service=Software_Solutions_Service.objects.get(id=id)
-    contact = Messages()
-    respond = 'Send Message'
-    return render(request, 'servicedetail.html',{'service': service,
-                                                'contact' : contact,
-                                                'respond' : respond
-                                                }
-                )
-
-
-def services(request):
-    service1 = Audit_Service.objects.all()
-    service2 = IS_Consultancy_Service.objects.all()
-    service3 = IS_Security_Service.objects.all()
-    service4 = Software_Solutions_Service.objects.all()
-    contact = Messages()
-    respond = 'Send Message'
-    return render(request, 'services.html',{'service1': service1,
-                                            'service2': service2,
-                                            'service3': service3,
-                                            'service4': service4,
-                                            'contact' : contact,
-                                            'respond' : respond
-                                            }
-                )
-
-
-def products(request):
-    product=Product.objects.all()
-    contact = Messages()
-    respond = 'Send Message'
-    return render(request, 'products.html',{'product': product,
-                                                'contact' : contact,
-                                                'respond' : respond
-                                            }
-                )
-
-def team(request):
-    team=Team.objects.all().order_by('id')
-    contact = Messages()
-    respond = 'Send Message'
-    return render(request, 'team.html',{'team': team,
-                                                'contact' : contact,
-                                                'respond' : respond
-                                        }
-                )
-
-def packagedetail(request,id):
-    package=Packages.objects.get(id=id)
-    contact = Messages()
-    respond = 'Send Message'
-    return render(request, 'packagedetail.html',{'package': package,
-                                                'contact' : contact,
-                                                'respond' : respond
-                                                }
-                )
-
-
-def nafilinux(request):
-    Information_gathering=Packages.objects.filter(domain_name='Information Gathering')
-    Vulnerability_Analysis=Packages.objects.filter(domain_name='Vulnerability Analysis')
-    Wireless_Attacks=Packages.objects.filter(domain_name='Wireless Attacks')
-    Web_Applications=Packages.objects.filter(domain_name='Web Applications')
-    Exploitation_Tools=Packages.objects.filter(domain_name='Exploitation Tools')
-    Stress_Testing=Packages.objects.filter(domain_name='Stress Testing')
-    Forensics_Tools=Packages.objects.filter(domain_name='Forensics Tools')
-    Sniffing_Spoofing=Packages.objects.filter(domain_name='Sniffing & Spoofing')
-    Password_Attacks=Packages.objects.filter(domain_name='Password Attacks')
-    Maintaining_Access=Packages.objects.filter(domain_name='Maintaining Access')
-    Reverse_Engineering=Packages.objects.filter(domain_name='Reverse Engineering')
-    Reporting_Tools=Packages.objects.filter(domain_name='Reporting Tools')
-    Hardware_Hacking=Packages.objects.filter(domain_name='Hardware Hacking')
-
-    contact = Messages()
-    respond = 'Send Message'
-    context = {'Information_gathering' : Information_gathering,
-                'Vulnerability_Analysis' : Vulnerability_Analysis,
-                'Wireless_Attacks' : Wireless_Attacks,
-                'Web_Applications' : Web_Applications,
-                'Exploitation_Tools' : Exploitation_Tools,
-                'Stress_Testing' : Stress_Testing,
-                'Forensics_Tools' : Forensics_Tools,
-                'Sniffing_Spoofing' : Sniffing_Spoofing,
-                'Password_Attacks' : Password_Attacks,
-                'Maintaining_Access' : Maintaining_Access,
-                'Reverse_Engineering' : Reverse_Engineering,
-                'Reporting_Tools' : Reporting_Tools,
-                'Hardware_Hacking' : Hardware_Hacking,
-                'contact' : contact,
-                'respond' : respond,
-                }
-    return render(request, 'nafilinux.html',context )
-
-
-
-def auditservice(request):
-    service = Audit_Service.objects.all()
-    contact = Messages()
-    respond = 'Send Message'
-    return render(request, 'auditservice.html',{'service': service,'contact' : contact,'respond' : respond})
-
-
-def auditrevolution(request):
-    contact = Messages()
-    respond = 'Send Message'
-    return render(request, 'auditrevolution.html',{'contact' : contact,'respond' : respond})
-
-
-def consultingservice(request):
-    service = IS_Consultancy_Service.objects.all()
-    contact = Messages()
-    respond = 'Send Message'
-    return render(request, 'consultingservice.html',{'service': service,'contact' : contact,'respond' : respond, })
-
-
-def digitaltransformation(request):
-    contact = Messages()
-    respond = 'Send Message'
-    return render(request, 'digitaltransformation.html',{'contact' : contact,'respond' : respond})
-
-def riskservice(request):
-    service = IS_Security_Service.objects.all()
-    contact = Messages()
-    respond = 'Send Message'
-    return render(request, 'riskservice.html',{'service': service,'contact' : contact,'respond' : respond})
-
-def softwareservice(request):
-    service = Software_Solutions_Service.objects.all()
-    contact = Messages()
-    respond = 'Send Message'
-    return render(request, 'softwareservice.html',{'service': service,'contact' : contact,'respond' : respond})
+def tubular(request,id):
+    tower = Tower.objects.get(id=id)
+    print(request.POST.get('conductor_type'))
+    if request.POST.get('conductor_type') == 'Aluminum Conductor Steel Reinforced (ACSR)':
+        print('yes')
+        resistivity = 0.0000000265
+        tower.resistance = (resistivity * float(request.POST.get('conductor_length')))/float(request.POST.get('conductor_crosssectional_area'))
+        skin_depth = math.sqrt(resistivity/(3.134*int(request.POST.get('frequency'))*(0.00000125)))
+        diameter = 2*(math.sqrt(float(request.POST.get('conductor_crosssectional_area'))/3.124))
+        tower.resistance = (resistivity * float(request.POST.get('conductor_length')))/(3.124*(diameter)*(skin_depth))
+        tower.skin_depth = skin_depth
+        temp_resistance = tower.resistance*((235+float(request.POST.get('temperature_effect')))/(235+29))
+        if request.POST.get('cable_configuration') == 'horizontal':
+            tower.current_carrying_capacity = '430'
+        if request.POST.get('cable_configuration') == 'vertical':
+            tower.current_carrying_capacity = '389'
+        # print(diameter)
+        tower.spacing_between_bundled_conductors = 'Not Applicable'
+        tower.inductance_of_transmission_lines = (0.00000125/2*3.142)*(0.25 + math.log(float(request.POST.get('spacing_between_conductors'))/(diameter/2)))
+        tower.capacitance = (0.0000000000555)/math.log((float(request.POST.get('spacing_between_conductors')))/(diameter/2))
+        tower.capacitive_reactance = (6600000/float(request.POST.get('frequency')))*(math.log(float(request.POST.get('spacing_between_conductors'))/float(diameter/2)))
+        disruptive_voltage = 0.0374*math.log((float(request.POST.get('spacing_between_conductors')))/float(diameter/2))
+        tower.corona_losses = (0.0000244/1.225)*(float(request.POST.get('frequency')) +25)*math.sqrt((diameter/2)/(float(request.POST.get('spacing_between_conductors'))*1000))*math.pow((((float(request.POST.get('sending_end_voltage_in_KV'))/math.sqrt(3))*1000)-disruptive_voltage),1)
+        tower.power_received_at_load_in_MVA = float(request.POST.get('power_transmitted_in_MVA')) - float(tower.corona_losses)/1000
+        tower.efficiency = int((float(tower.power_received_at_load_in_MVA)/float(request.POST.get('power_transmitted_in_MVA')))*100)
+        tower.voltage_regulation = int(((float(request.POST.get('sending_end_voltage_in_KV'))- float(tower.receiving_end_voltage_in_KV))/float(tower.receiving_end_voltage_in_KV))*100)
+        print(tower.voltage_regulation)
+        print(tower.power_received_at_load_in_MVA)
+        tower.temperature_effect = request.POST.get('temperature_effect')
+        tower.tower_height = request.POST.get('tower_height')
+        tower.frequency = request.POST.get('frequency')
+        tower.conductor_crosssectional_area = request.POST.get('conductor_crosssectional_area')
+        tower.spacing_between_conductors = request.POST.get('spacing_between_conductors')
+        
+        form = TubularTower()
+    return render(request, 'tower.html', context={'product':tower,'temp_resistance':temp_resistance,'form': form})

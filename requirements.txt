@@ -32,3 +32,4 @@ urllib3==1.25.8
 webencodings==0.5.1
 django-otp==1.0.2
 qrcode==6.1
+django-environ
