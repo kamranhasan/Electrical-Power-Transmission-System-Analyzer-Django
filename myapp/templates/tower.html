@@ -49,7 +49,7 @@
           </div>
         </nav>
           
-	  <section class="hero-wrap" style="background-image: url('{{ product.picture }}');background-size:100% 100%; background-repeat: no-repeat;" data-stellar-background-ratio="0.5">
+	  <section class="hero-wrap" style="background-image: url('https://live.staticflickr.com/921/43216592422_f60a5bf364_b.jpg');background-size:100% 100%; background-repeat: no-repeat;" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-start">
@@ -168,9 +168,23 @@
 					        <td></td>
 					      </tr>
                 <tr>
+				      	  <th scope="row">Line Type</th>
+					        <td class="d-flex">
+					        	  <b>{{ product.line_type }} </b>
+					        </td>
+					        <td></td>
+					      </tr>
+                <tr>
 				      	  <th scope="row">Conductor Length</th>
 					        <td class="d-flex">
 					        	  <b>{{ product.conductor_length }} m</b>
+					        </td>
+					        <td></td>
+					      </tr>
+                <tr>
+				      	  <th scope="row">Insulator Type</th>
+					        <td class="d-flex">
+					        	  <b>{{ product.insulator_type }} m</b>
 					        </td>
 					        <td></td>
 					      </tr>
@@ -354,21 +368,14 @@ section.svg-container:nth-last-of-type(0) svg.radial-progress{background-image:l
           <h3 align='center' class="mb-5 btn-primary">Run Your Own Analysis</h3>
           <form class="form-contact contact_form" action="{% url 'tubular' product.id %}" method="POST" >
             {% csrf_token %}
-            <div class="row">
-              <div class="container col-20">
-              <div align='center' class="form-group">
+            <div class="row" >
+              <div class="container col-50">
+              <div align='center' class="form-group" >
                 {% block bookingsform %}
                 {% load crispy_forms_tags %}
                 {{ form|crispy}}
               <button type="submit" class="btn draw-border btn-primary">Run Analysis</button>
-            <!-- <h3>{{ accountDetails.3 }}</h3>
-            <p>{{ accountDetails2.3 }}</p>
-            <h3>{{ accountDetails.2 }}</h3>
-            <p>{{ accountDetails2.2 }}</p>
-            <h3>{{ accountDetails.1 }}</h3>
-            <p>{{ accountDetails2.1 }}</p>
-            <h3>{{ accountDetails.0 }}</h3>
-            <p>{{ accountDetails2.0 }}</p> -->
+         
             </div>
             
             {% endblock bookingsform %}

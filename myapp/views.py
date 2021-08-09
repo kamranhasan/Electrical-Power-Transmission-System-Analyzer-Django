@@ -6,40 +6,31 @@ from django.conf import settings
 # Create your views here.
 def index(request):
     towers = Tower.objects.all()
-    # service4 = Software_Solutions_Service.objects.all()
-    # product = Product.objects.all()[:4]
-    # testimonial = Testimonial.objects.all()
-    # team = Team.objects.all().order_by('id')[:3]
-    # contact = Messages()
-    # respond = 'Send Message'
-    # context = {
-    #     'service3' : service3,
-    #     'service4' : service4,
-    #     'product' : product, 
-    #     'testimonial' : testimonial,
-    #     'team' : team,
-    #     'contact' : contact,
-    #     'respond' : respond
-    #     }
     return render(request, 'index.html', context={'towers':towers})
 import math 
+import os
 def tower(request,id):
     tower = Tower.objects.get(id=id)
-    if tower.conductor_type == 'Aluminum Conductor Steel Reinforced (ACSR)':
+    if tower.conductor_type != 'Aluminum Conductor Steel Reinforced (ACSR)':
         print('yes')
         resistivity = 0.0000000265
+        print(tower.conductor_length)
         tower.resistance = (resistivity * float(tower.conductor_length))/float(tower.conductor_crosssectional_area)
         skin_depth = math.sqrt(resistivity/(3.134*int(tower.frequency)*(0.00000125)))
         diameter = 2*(math.sqrt(float(tower.conductor_crosssectional_area)/3.124))
         tower.resistance = (resistivity * float(tower.conductor_length))/(3.124*(diameter)*(skin_depth))
         tower.skin_depth = skin_depth
+        # temp_resistance = 'e'
         temp_resistance = tower.resistance*((235+float(tower.temperature_effect))/(235+29))
         if tower.cable_configuration == 'horizontal':
             tower.current_carrying_capacity = '430'
         if tower.cable_configuration == 'vertical':
             tower.current_carrying_capacity = '389'
         # print(diameter)
-        tower.spacing_between_bundled_conductors = 'Not Applicable'
+        if tower.spacing_between_bundled_conductors == '':
+            tower.spacing_between_bundled_conductors = 'Not Applicable'
+        else:
+            pass
         tower.inductance_of_transmission_lines = (0.00000125/2*3.142)*(0.25 + math.log(float(tower.spacing_between_conductors)/(diameter/2)))
         tower.capacitance = (0.0000000000555)/math.log((float(tower.spacing_between_conductors))/(diameter/2))
         tower.capacitive_reactance = (6600000/float(tower.frequency))*(math.log(float(tower.spacing_between_conductors)/float(diameter/2)))
@@ -51,12 +42,16 @@ def tower(request,id):
         tower.power_received_at_load_in_MVA = float(tower.power_transmitted_in_MVA) - float(tower.corona_losses)/1000
         print(tower.power_received_at_load_in_MVA)
         form = TubularTower()
+        # import subprocess
+        # print(subprocess.run(["ls",], 
+        #              capture_output=True))
+        
     return render(request, 'tower.html', context={'product':tower,'temp_resistance':temp_resistance,'form': form})
 
 def tubular(request,id):
     tower = Tower.objects.get(id=id)
     print(request.POST.get('conductor_type'))
-    if request.POST.get('conductor_type') == 'Aluminum Conductor Steel Reinforced (ACSR)':
+    if request.POST.get('conductor_type') != 'Aluminum Conductor Steel Reinforced (ACSR)':
         print('yes')
         resistivity = 0.0000000265
         tower.resistance = (resistivity * float(request.POST.get('conductor_length')))/float(request.POST.get('conductor_crosssectional_area'))
@@ -70,7 +65,10 @@ def tubular(request,id):
         if request.POST.get('cable_configuration') == 'vertical':
             tower.current_carrying_capacity = '389'
         # print(diameter)
-        tower.spacing_between_bundled_conductors = 'Not Applicable'
+        if tower.spacing_between_bundled_conductors == '':
+            tower.spacing_between_bundled_conductors = 'Not Applicable'
+        else:
+            pass 
         tower.inductance_of_transmission_lines = (0.00000125/2*3.142)*(0.25 + math.log(float(request.POST.get('spacing_between_conductors'))/(diameter/2)))
         tower.capacitance = (0.0000000000555)/math.log((float(request.POST.get('spacing_between_conductors')))/(diameter/2))
         tower.capacitive_reactance = (6600000/float(request.POST.get('frequency')))*(math.log(float(request.POST.get('spacing_between_conductors'))/float(diameter/2)))
@@ -86,6 +84,10 @@ def tubular(request,id):
         tower.frequency = request.POST.get('frequency')
         tower.conductor_crosssectional_area = request.POST.get('conductor_crosssectional_area')
         tower.spacing_between_conductors = request.POST.get('spacing_between_conductors')
+        tower.line_type = request.POST.get('line_type')
+        tower.insulator_type = request.POST.get('insulator_type')
         
         form = TubularTower()
     return render(request, 'tower.html', context={'product':tower,'temp_resistance':temp_resistance,'form': form})
+
+

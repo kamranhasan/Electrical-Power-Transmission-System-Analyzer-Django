@@ -21,9 +21,12 @@ class Tower(models.Model):
     capacitance = models.CharField(max_length=200,default='',blank=True)
     capacitive_reactance = models.CharField(max_length=200,default='',blank=True)
     conductor_choices = (
-        ('Aluminum Conductor Steel Reinforced (ACSR)','Aluminum Conductor Steel Reinforced (ACSR)'),
-        ('All Aluminium conductors (AAC)','All Aluminium conductors (AAC)'),
-        ('Aluminium conductor, Alloy-Reinforced (ACAR)','Aluminium conductor, Alloy-Reinforced (ACAR)'),
+        ('Partridge','Partridge'),
+        ('Ostrich','Ostrich'),
+        ('Merlin','Merlin'),
+        ('Pelican','Pelican'),
+        ('Drake','Drake'),
+        ('Pheasant','Pheasant'),
     )
     conductor_type = models.CharField(max_length=200,choices = conductor_choices,default='',blank=True)
     conductor_length = models.CharField(max_length=200,default='',blank=True)
@@ -34,7 +37,7 @@ class Tower(models.Model):
     choices = (
         ('horizontal','horizontal'),
         ('vertical','vertical'),
-    )
+       )
     cable_configuration = models.CharField(max_length=200,choices = choices,default='',blank=True)
     power_transmitted_in_MVA = models.CharField(max_length=200,default='',blank=True)
     power_received_at_load_in_MVA = models.CharField(max_length=200,default='',blank=True)
@@ -43,6 +46,21 @@ class Tower(models.Model):
     receiving_end_voltage_in_KV = models.CharField(max_length=200,default='',blank=True)
     voltage_regulation = models.CharField(max_length=200,default='',blank=True)
     corona_losses = models.CharField(max_length=200,default='',blank=True)
+    line_choices = (
+        ('SINGLE CIRCUIT UNBUNDLED','SINGLE CIRCUIT UNBUNDLED'),
+        ('DOUBLE CIRCUIT UNBUNDLED','DOUBLE CIRCUIT UNBUNDLED'),
+        ('DOUBLE CIRCUIT BUNDLED (2C)','DOUBLE CIRCUIT BUNDLED (2C)'),
+        ('DOUBLE CIRCUIT BUNDLED (3C)','DOUBLE CIRCUIT BUNDLED (3C)'),
+        ('DOUBLE CIRCUIT BUNDLED (4C)','DOUBLE CIRCUIT BUNDLED (4C)'),
+    )
+    line_type = models.CharField(max_length=200,choices=line_choices,default='',blank=True)
+    insulator_choices = (
+        ('Pin type','Pin type'),
+        ('Suspension type','Suspension type'),
+        ('Strain type','Strain type'),
+        
+    )
+    insulator_type = models.CharField(max_length=200,choices=insulator_choices,default='',blank=True)
     
     def __str__(self):
         return self.name
